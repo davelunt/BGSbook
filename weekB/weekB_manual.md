@@ -1,4 +1,6 @@
-# Overview of Week B
+# Week B manual
+
+## Overview of Week B
 
 ![week B schedule](../images/weekB_timetable.png)
 
@@ -6,14 +8,13 @@
 
 This week you will
 
-1.  Learn the theory of nanopore sequencing and library construction
+1. Learn the theory of nanopore sequencing and library construction
 
-2.  Prepare your DNA extraction for sequencing and create a sequencing
-    > library
+2. Prepare your DNA extraction for sequencing and create a sequencing library
 
-3.  Prepare and load the nanopore
+3. Prepare and load the nanopore
 
-4.  Generate DNA data suitable to reconstruct a bacterial genome
+4. Generate DNA data suitable to reconstruct a bacterial genome
 
 ## Assessed Portfolio Activities
 
@@ -30,10 +31,9 @@ best way to keep a useful record.
 This week you will have two competencies to document. These are
 described in more detail during the introductory session on Monday.
 
-1.  Correct calculation of DNA quantities for the sequencing library
+1. Correct calculation of DNA quantities for the sequencing library
 
-2.  Brief ("News and Views") summary of a set paper, it\'s science and
-    > context
+2. Brief ("News and Views") summary of a set paper, it\'s science and context
 
 ## Learning and Study
 

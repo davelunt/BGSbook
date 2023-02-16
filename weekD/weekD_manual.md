@@ -1,4 +1,6 @@
-# Overview of Week D
+# Week D manual
+
+## Overview of Week D
 
 ![week D schedule](../images/weekD_timetable.png)
 
@@ -9,13 +11,13 @@ to respond to surprisingly slow/quick data analyses.
 
 This week you will
 
-1.  Carry out the annotation of your E. coli genomes
+1. Carry out the annotation of your E. coli genomes
 
-2.  Predict antibiotic resistance genes
+2. Predict antibiotic resistance genes
 
-3.  Present your current work to the class (groups)
+3. Present your current work to the class (groups)
 
-4.  Begin to plan week E
+4. Begin to plan week E
 
 ## Research
 
@@ -40,11 +42,9 @@ This week you will have two competencies to document. These will be
 described in more detail during the week, and in the jupyter notebooks
 provided.
 
-1.  Demonstrate understanding of genome annotation by explaining how a
-    > chosen piece of software goes about it.
+1. Demonstrate understanding of genome annotation by explaining how a chosen piece of software goes about it.
 
-2.  Demonstrate knowledge of antibiotic systems by listing antibiotics
-    > and their brief mode of action.
+2. Demonstrate knowledge of antibiotic systems by listing antibiotics and their brief mode of action.
 
 ## Reading
 

@@ -18,8 +18,8 @@ Students are assigned 2 copmpetencies to document per week (10 in total). Here t
 4. News and Views style article on an application of nanopore sequencing [Week B]
 5. Demonstration of command line competency by notebook completion [Week C]
 6. Graphical/tabular descriptions of sequence data [Week C]
-7. Explain briefly how a named software attempts to annotate components of the bacterial genome
-8. Produce a simple table of AMR genes present in your strains
+7. Explain briefly how a named software attempts to annotate components of the bacterial genome [Week D]
+8. Produce a simple table of AMR genes present in your strains [Week D]
 9. Updated CV that includes description of the skills you have gained during this module written for either job applications or postgraduate study applications [Week A-E]
 10. Completed lab notebook [Week A-E] 
 

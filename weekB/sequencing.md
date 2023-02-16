@@ -1,2 +1,0 @@
-# Week B: DNA sequencing
-

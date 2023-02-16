@@ -2,10 +2,7 @@
 
 ## Understanding how to do well with the course
 
-Welcome to BGS. Each lab week will have a separate lab manual with all
-the details and instructions you need. This is a guide to the BGS course
-structure, and a way in which we can highlight the important stuff,
-guiding you (we hope) to do well.
+Welcome to Bacterial Genome Sequencing course. Each lab week will have a separate lab manual with all the details and instructions you need. This is a guide to the BGS course structure, and a way in which we can highlight the important stuff,guiding you (we hope) to do well.
 
 601137 Bacterial Genome Sequencing is a 40-credit 2-semester course and
 part of the final-year-projects umbrella of modules. We will work
@@ -31,32 +28,32 @@ individual and you will not be dependent on others for good marks.
 
 Try to think what you want to get out of this course. Perhaps you just
 want 40 credits, perhaps to learn very modern lab skills, perhaps to
-sequence a bacterial genome because it\'s fun and fascinating. There are
+sequence a bacterial genome because it's fun and fascinating. There are
 lots of other things you might want.
 
 We want to teach a good course. We want to provide an alternative to the
 standard IRP project format to promote a diversity of learning methods.
 We want to interact with students and guide them through research
-because it\'s fun and rewarding and something we don't often get to do.
+because it's fun and rewarding and something we don't often get to do.
 We want to teach students cutting edge lab techniques to prepare them
 for research or industry. We want to sequence bacterial genomes because
-it\'s fun and fascinating.
+it's fun and fascinating.
 
 We can arrange this course so that both students and staff get what they
 want, but we need to collaborate. We are working hard in the background
 to prepare everything and to teach the material. You will also need to
 work hard behind the scenes reading papers, learning methods and skills,
 thinking and asking questions. You can get great marks on this course
-(and remember it\'s 40 credits) but it will require very strong
+(and remember it's 40 credits) but it will require very strong
 engagement, you will have to work for it.
 
 ## Assessments
 
-1.  Portfolio 25%
+1. Portfolio 25%
 
-2.  Group presentation 25%
+2. Group presentation 25%
 
-3.  Manuscript 50%
+3. Manuscript 50%
 
 The assessments are *briefly* outlined below but we will explain and
 guide you much more as the course progresses. Each assessment will have
@@ -69,16 +66,13 @@ You will individually prepare and submit a document (portfolio)
 outlining the different work you have done. This has two compulsory
 components
 
-1.  **Electronic Lab Notebook**, a reproducible record of all your
-    > research activities
+1. **Electronic Lab Notebook**, a reproducible record of all your research activities
 
-2.  **Evidence of achievement of competencies**, briefly document the
-    > completion of specific research activities that are assigned to
-    > you (eg run a gel, summarise a paper, trim DNA sequences)
+2. **Evidence of achievement of competencies**, briefly document the completion of specific research activities that are assigned to you (eg run a gel, summarise a paper, trim DNA sequences)
 
 ### Group presentation
 
-You will present your work as a small group (\~4 students) in a 10
+You will present your work as a small group (~4 students) in a 10
 minute talk to the other students. You will present your preliminary
 analyses and results describing what they mean. You are not assessed on
 how slick you are at presenting, but more on how well you explain the
@@ -132,19 +126,12 @@ discuss with you how you can best represent your new knowledge and
 abilities in this way. Some things that you may be able to include at
 the end of the course include:
 
--   Microbiology techniques. Plating, culturing and gram staining
-    > bacteria from clinical isolates
+- Microbiology techniques. Plating, culturing and gram staining bacteria from clinical isolates
 
--   Bacterial DNA extraction, construction of DNA sequencing library and
-    > running of minION nanopore DNA sequencer
+- Bacterial DNA extraction, construction of DNA sequencing library and running of minION nanopore DNA sequencer
 
--   Knowledge of the unix command line. Basic command line skills to
-    > navigate, inspect and manipulate large data sets
+- Knowledge of the unix command line. Basic command line skills to navigate, inspect and manipulate large data sets
 
--   Genome assembly and annotation. Basic skills to assemble a bacterial
-    > genome from DNA sequence data, and annotate to discover antibiotic
-    > resistance genes
+- Genome assembly and annotation. Basic skills to assemble a bacterial genome from DNA sequence data, and annotate to discover antibiotic resistance genes
 
--   Reproducible research skills. Understanding of modern reproducible
-    > research skills including archiving data and metadata, electronic
-    > laboratory records, and open practices.
+- Reproducible research skills. Understanding of modern reproducible research skills including archiving data and metadata, electronic laboratory records, and open practices.

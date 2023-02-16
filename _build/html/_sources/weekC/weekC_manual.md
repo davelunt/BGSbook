@@ -1,6 +1,6 @@
 # Week C manual
 
-## Overview of Week C: 30th Jan - 3rd Feb 2023
+## Overview of Week C
 
 ![week C timetable](../images/weekC_timetable.png)
 
@@ -11,15 +11,15 @@ to respond to surprisingly slow/quick data analyses.
 
 This week you will
 
-1.  Learn key bioinformatics skills to easily process large amounts of data
+1. Learn key bioinformatics skills to easily process large amounts of data
 
-2.  Characterise and understand the data from the nanopore sequencer
+2. Characterise and understand the data from the nanopore sequencer
 
-3.  Quality control the data
+3. Quality control the data
 
-4.  Assemble bacterial genomes
+4. Assemble bacterial genomes
 
-5.  Quality control the genomes and describe them suitable for a paper
+5. Quality control the genomes and describe them suitable for a paper
 
 ## Bioinformatics Analyses
 
@@ -60,13 +60,9 @@ described in more detail during the week, and in the bioinformatics
 notebooks to be provided. You will of course be taught all the skills to
 demonstrate these competencies
 
-1.  Demonstrate competency in command line skills by completing
-    > competency tasks A, B and C and submitting your Jupyter notebook
-    > to Canvas as a PDF.
+1. Demonstrate competency in command line skills by completing competency tasks A, B and C and submitting your Jupyter notebook to Canvas as a PDF.
 
-2.  Produce appropriate tabular and/or graphical descriptions of your
-    > sequence and assembly data. You should get this checked, and then
-    > submit it as part of your competency portfolio.
+2. Produce appropriate tabular and/or graphical descriptions of your sequence and assembly data. You should get this checked, and then submit it as part of your competency portfolio.
 
 NB you must submit a separate PDF to Canvas under the assignment "Week C
 unix competency". We will then grade this as part of the competency

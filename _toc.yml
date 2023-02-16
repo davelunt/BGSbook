@@ -8,9 +8,10 @@ parts:
   - caption: Course Details
     maxdepth: 2
     chapters:
+    - file: course/index.md
+      title: BGS course manual
     - file: course/facilities.md
     - file: course/assessments.md
-    - file: course/BGSmanual.md
 
   - caption:  Week A microbiology
     maxdepth: 2
@@ -20,18 +21,17 @@ parts:
   - caption:  Week B sequencing
     maxdepth: 2
     chapters:
-    - file: weekB/sequencing.md
+    - file: weekB/weekB_manual.md
 
   - caption:  Week C assembly
     maxdepth: 2
     chapters:
-    - file: weekC/assembly
     - file: weekC/weekC_manual.md
 
   - caption:  Week D annotation
     maxdepth: 2
     chapters:
-    - file: weekD/annotation.md
+    - file: weekD/weekD_manual.md
     
   - caption:  Week E antibiotics
     maxdepth: 2
