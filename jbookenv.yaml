@@ -1,0 +1,15 @@
+name: jbook
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python>=3.7
+  - jupyterlab
+  - jupyter-book
+  - pandoc
+
+  # sequences and general
+  - seqkit # format conversion and stats reporting
+  - csvtk # csv file toolkit, used in seqkit stats

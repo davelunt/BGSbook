@@ -1,0 +1,33 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Course Details
+  chapters:
+    - file: course/facilities
+    - file: course/assessments
+    - file: course/BGSmanual
+
+  - caption:  Week A microbiology
+  chapters:
+    - file: weekA/microbiology
+
+  - caption:  Week B sequencing
+  chapters:
+    - file: weekB/sequencing
+
+  - caption:  Week C assembly
+  chapters:
+    - file: weekC/assembly
+    - file: weekC/weekC_manual
+
+  - caption:  Week D annotation
+  chapters:
+    - file: weekD/annotation
+
+  - caption:  Week E antibiotics
+  chapters:
+    - file: weekE/antibiotics
+
