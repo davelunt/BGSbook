@@ -1,33 +1,40 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+# https://jupyterbook.org/en/stable/structure/configure.html
 
 format: jb-book
 root: intro
 parts:
   - caption: Course Details
-  chapters:
-    - file: course/facilities
-    - file: course/assessments
-    - file: course/BGSmanual
+    maxdepth: 2
+    chapters:
+    - file: course/facilities.md
+    - file: course/assessments.md
+    - file: course/BGSmanual.md
 
   - caption:  Week A microbiology
-  chapters:
-    - file: weekA/microbiology
+    maxdepth: 2
+    chapters:
+    - file: weekA/microbiology.md
 
   - caption:  Week B sequencing
-  chapters:
-    - file: weekB/sequencing
+    maxdepth: 2
+    chapters:
+    - file: weekB/sequencing.md
 
   - caption:  Week C assembly
-  chapters:
+    maxdepth: 2
+    chapters:
     - file: weekC/assembly
-    - file: weekC/weekC_manual
+    - file: weekC/weekC_manual.md
 
   - caption:  Week D annotation
-  chapters:
-    - file: weekD/annotation
-
+    maxdepth: 2
+    chapters:
+    - file: weekD/annotation.md
+    
   - caption:  Week E antibiotics
-  chapters:
-    - file: weekE/antibiotics
-
+    maxdepth: 2
+    chapters:
+    - file: weekE/antibiotics.md
+  

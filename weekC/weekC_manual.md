@@ -1,32 +1,8 @@
+# Week C manual
+
 ## Overview of Week C: 30th Jan - 3rd Feb 2023
 
-  --------------------------------------------------------------------------
-  Day                     Activity Plan
-  ----------- ----------- --------------------------------------------------
-  Monday      Morning     Explanation of the week's work. Introduction to
-                          the command line
-
-              Afternoon   Introduction to the command line
-
-  Tuesday     Morning     DNA sequence Quality Control
-
-              Afternoon   Taxonomic ID of the sequenced bacteria
-
-  Wednesday   Morning     Develop a genome assembly strategy. Genome
-                          Assembly
-
-              Afternoon   FREE TIME
-
-  Thursday    Morning     Genome Assembly
-
-              Afternoon   Genome Assembly Quality Control
-
-  Friday      Morning     Generation of figures and tables for your
-                          manuscript. Fixing any issues, help with
-                          competencies
-
-              Afternoon   Wrap up
-  --------------------------------------------------------------------------
+![week C timetable](../images/weekC_timetable.png)
 
 NB this timetable may be a little fluid to avoid timetable clashes and
 to respond to surprisingly slow/quick data analyses.
@@ -147,43 +123,3 @@ files to Canvas. It is perfectly OK for you to treat these "whole
 dataset outputs" as the outputs of your own work, they pretty much are.
 I think it is OK to just say "our analysis produced report X" and then
 show the full dataset report.
-
-  ------------------------------------------------------------------------------------
-  strainbquast.zip                                 Quast output on strain b assembly
-                                                   of all data
-  ------------------------------------------------ -----------------------------------
-  straincquast.zip                                 Quast output on strain c assembly
-                                                   of all data
-
-  assembly_b\_fulldata.fasta                       Flye assembly of all the strain b
-                                                   fastq data
-
-  assembly_c\_fulldata.fasta                       Flye assembly of all the strain c
-                                                   fastq data
-
-  b_read1.zip                                      Compressed single fastq file of
-                                                   strain b data used as test of
-                                                   assembly and q
-
-  bgs-both_fastpQ10L500_kraken_recentrifuge.html   Recentrifuge diagram of Kraken
-                                                   analysis of all strain b and strain
-                                                   c data against all the bacterial
-                                                   genomes (and human) database
-  ------------------------------------------------------------------------------------
-
-## Working on your own for fun - not part of the BGS course
-
-Students will not need to do any of this below, but some people like to
-explore for themselves and if you have the computer knowledge you can
-run all this independently. **I am not recommending this, and can't give
-support.** If you are reading this before the practical it is likely
-that we are still changing things and this repository is not complete,
-and may not work.
-
-Most of the genome assembly work will require a unix based system. In
-order to run these notebooks you should install [[Jupyter
-Lab]{.underline}](https://jupyter.org/), a data analysis environment,
-with a **bash shell** installed as the kernel, not the default python
-kernel. The env.yaml file in this repository specifies the analysis
-software needing to be installed, we usually work in a conda environment
-created using this file.
