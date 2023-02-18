@@ -8,7 +8,7 @@ parts:
   - caption: Course Details
     maxdepth: 2
     chapters:
-    - file: course/index.md
+    - file: course/course.md
       title: BGS course manual
     - file: course/facilities.md
     - file: course/assessments.md
