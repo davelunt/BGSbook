@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Analysis and Quality Control of Sequence Data &#8212; BGS course book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Taxonomic ID" href="3.taxonomic_ID.html" />
+    <link rel="prev" title="Introduction to the unix command line" href="1.Intro_unix_command_line.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/BGSlogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BGS course book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Bacterial Genome Sequencing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/index.html">
+   BGS course manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/facilities.html">
+   Facilities and Equipment for the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/assessments.html">
+   Assessments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week A microbiology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekA/microbiology.html">
+   Week A Microbiology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week B sequencing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/weekB_manual.html">
+   Week B manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/ONT_library_prep.html">
+   ONT ligation library preparation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week C assembly
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="weekC_manual.html">
+   Week C manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.Intro_unix_command_line.html">
+   Introduction to the unix command line
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   sequence_QC.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.taxonomic_ID.html">
+   taxonomic_ID.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.assembly.html">
+   assembly.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week D annotation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/weekD_manual.html">
+   Week D manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/5.AMR_detection.html">
+   AMR_detection.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week E antibiotics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekE/antibiotics.html">
+   Week E: Student-led experiments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Completing the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../completion.html">
+   final tasks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FweekC/2.sequence_QC.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/weekC/2.sequence_QC.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-week-s-work">
+   This Week’s Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competencies">
+   Competencies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characterising-your-data">
+   1 Characterising Your Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fastq-format-files">
+     1.1 fastq format files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documenting-your-data">
+   1.2 Documenting your data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-list-of-fastq-file-names">
+     1.2.1 Create a list of fastq file names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-the-number-of-sequence-records-in-a-fastq-file">
+     1.2.2 Counting the number of sequence records in a fastq file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaling-the-approach">
+     1.2.3 scaling the approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-the-output">
+     1.2.4 Formatting the output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seqkit-an-easier-way-to-characterise-sequence-data">
+     1.2.5
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       seqkit
+      </span>
+     </code>
+     an easier way to characterise sequence data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qc-of-the-data">
+   2. QC of the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-by-read-quality-and-length">
+     2.1 Filtering by read quality and length
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#re-characterising-the-data">
+     2.2 Re-characterising the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Competencies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-reading">
+   Extra Reading
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Analysis and Quality Control of Sequence Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-week-s-work">
+   This Week’s Work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competencies">
+   Competencies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characterising-your-data">
+   1 Characterising Your Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fastq-format-files">
+     1.1 fastq format files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documenting-your-data">
+   1.2 Documenting your data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-list-of-fastq-file-names">
+     1.2.1 Create a list of fastq file names
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-the-number-of-sequence-records-in-a-fastq-file">
+     1.2.2 Counting the number of sequence records in a fastq file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaling-the-approach">
+     1.2.3 scaling the approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formatting-the-output">
+     1.2.4 Formatting the output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seqkit-an-easier-way-to-characterise-sequence-data">
+     1.2.5
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       seqkit
+      </span>
+     </code>
+     an easier way to characterise sequence data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qc-of-the-data">
+   2. QC of the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-by-read-quality-and-length">
+     2.1 Filtering by read quality and length
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#re-characterising-the-data">
+     2.2 Re-characterising the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Competencies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-reading">
+   Extra Reading
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="analysis-and-quality-control-of-sequence-data">
+<h1>Analysis and Quality Control of Sequence Data<a class="headerlink" href="#analysis-and-quality-control-of-sequence-data" title="Permalink to this headline">#</a></h1>
+<section id="this-week-s-work">
+<h2>This Week’s Work<a class="headerlink" href="#this-week-s-work" title="Permalink to this headline">#</a></h2>
+<p>You have already sequenced your bacterial DNA preparation last term. The nanopore data has been base called turning the current fluctations into predictions of nucleotides. These have been written to <code class="docutils literal notranslate"><span class="pre">.fastq</span></code> files incorporating the sequence and the base quality (confidence).</p>
+<p>In this next section of work you need to characterise this data to determine statistics like: how many files, how many sequences in each, how many sequences in total, lenghts of sequences etc etc</p>
+<p>Once this is done we can discuss the data and carry out some quality control (QC) to remove sequences not meeting our data standards.</p>
+<p>We will then be able to assemble this data into a bacterial genome</p>
+<p>Next you will need to characterise this genome just as you did the original sequences asking perhaps how many contigs are present, how long they are, how many sequence reads they represent.</p>
+<p>Finally you should prepare figures and tables from your charcterisations as these will be a very important part of your Results section in the manuscript.</p>
+</section>
+<section id="competencies">
+<h2>Competencies<a class="headerlink" href="#competencies" title="Permalink to this headline">#</a></h2>
+<p>You have already uploaded your first competency, the introduction to the unix command line notebook PDF demonstrating your competency at data manipulation.</p>
+<p><strong>The remaining competency is to produce appropriate tabular and/or graphical descriptions of your sequence and assembly data.</strong></p>
+<p>Please take the opportunity to get 1-on-1 feedback on your work at the end of the week.</p>
+<p>The format of these is for you to determine. I would imagine that most students would have approx 2 tables and 1-2 figures on 1-2 pages. You might want to produce these like paper figures/tables with good legends, then they will be ready to go directly into your final manuscript if you wish.</p>
+</section>
+<section id="characterising-your-data">
+<h2>1 Characterising Your Data<a class="headerlink" href="#characterising-your-data" title="Permalink to this headline">#</a></h2>
+<p>Many of the skills you will need to characterise you sequence data you have already deployed in the “introduction to the unix command line” sessions.</p>
+<section id="fastq-format-files">
+<h3>1.1 fastq format files<a class="headerlink" href="#fastq-format-files" title="Permalink to this headline">#</a></h3>
+<p><strong>You will need to read and understand the following section</strong></p>
+<p>fastq is a standard file format similar to fasta. It is used for data coming off of seqencing machines and is typically later transformed into the slightly simpler fasta file format.</p>
+<p>fastq files contain a base quality value associated with each nucleotide position. This is sometimes called a Phred quality score. This allows the researcher to quality control the sequencing data by removing sequences with too low an average score, or trimming sequences when the score falls below a threshold value.</p>
+<p>Fasta files represent each sequence record on 2 lines: the header beginning with a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and a new sequence line following it. Each fastq file records a sequence record on 4 lines</p>
+<p><img alt="image" src="../_images/fastq_fig.png" /></p>
+<p><em>Figure 7.2 from Akalin “Computational Genomics with R”</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">@&lt;</span><span class="n">identifier</span> <span class="ow">and</span> <span class="n">expected</span> <span class="n">information</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">sequence</span><span class="o">&gt;</span>
+<span class="o">+&lt;</span><span class="n">identifier</span> <span class="ow">and</span> <span class="n">other</span> <span class="n">information</span> <span class="n">OR</span> <span class="n">empty</span> <span class="n">string</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">quality</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Line 1: this is a header line beginning with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> and followed by an identifier “HWI-EAS209_006_FC706VJ” and other information</p>
+<p>Line 2: the sequence</p>
+<p>Line 3: begine with <code class="docutils literal notranslate"><span class="pre">+</span></code> and marks the end of the sequence data. Might also have the same identifier as line 1</p>
+<p>Line 4: symbols encoding the quality value of each nucleotide in line 2. These are Phred quality scores and represent the probability of a wrong base call. Each ascii symbol represents a specific numerical value in order to save space. If you wish, you can look up the symbols and quality scores <a class="reference external" href="https://support.illumina.com/help/BaseSpace_OLH_009008/Content/Source/Informatics/BS/QualityScoreEncoding_swBS.htm">at this link</a></p>
+<p>Here is a brief summary of Phred quality scores. Note that the numbers are logarithmic so Q30 is 10 times better than Q20</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Phred</span>   <span class="n">Error</span><span class="o">-</span><span class="n">rate</span>    <span class="n">Accuracy</span>
+
+ <span class="mi">10</span>     <span class="mi">1</span> <span class="n">of</span> <span class="mi">10</span>        <span class="mi">90</span><span class="o">%</span>       <span class="c1"># very low quality</span>
+
+ <span class="mi">20</span>     <span class="mi">1</span> <span class="n">of</span> <span class="mi">100</span>       <span class="mi">99</span><span class="o">%</span>       <span class="c1"># minimum quality for many tools</span>
+
+ <span class="mi">30</span>     <span class="mi">1</span> <span class="n">of</span> <span class="mi">1000</span>      <span class="mf">99.9</span><span class="o">%</span>     <span class="c1"># reasonable good quality</span>
+
+ <span class="mi">40</span>     <span class="mi">1</span> <span class="n">of</span> <span class="mi">10000</span>     <span class="mf">99.99</span><span class="o">%</span>    <span class="c1"># high quality</span>
+
+ <span class="mi">50</span>     <span class="mi">1</span> <span class="n">of</span> <span class="mi">100000</span>    <span class="mf">99.999</span><span class="o">%</span>   <span class="c1"># very high quality</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documenting-your-data">
+<h2>1.2 Documenting your data<a class="headerlink" href="#documenting-your-data" title="Permalink to this headline">#</a></h2>
+<p>All science must clearly describe what has been done to what data in order to produce the results. It is essential that you know your data, and you will now characterise it.</p>
+<p>Questions you might ask include:</p>
+<ol class="simple">
+<li><p>How many fastq files do you have?</p></li>
+<li><p>How many sequences are present in each file?</p></li>
+<li><p>How long are the sequences on average, and what is their total length?</p></li>
+</ol>
+<p>Fortunately you have already developed many of the big-data skills to work this out quickly and accurately.</p>
+<p>Although you already know more than one way to count files and sequences I would suggest best-practice is to make text files where key data is recorded. That way it will be easy to do further analysis, and easy to create tables.</p>
+<section id="create-a-list-of-fastq-file-names">
+<h3>1.2.1 Create a list of fastq file names<a class="headerlink" href="#create-a-list-of-fastq-file-names" title="Permalink to this headline">#</a></h3>
+<p>If you need to look back at the syntax you should check out “intro_to_unix_command_line.ipynb” section 5.3</p>
+<p>Write an <code class="docutils literal notranslate"><span class="pre">echo</span></code> command to write the filename of every <code class="docutils literal notranslate"><span class="pre">.fastq</span></code> file to a new text file with an appropriate name</p>
+<p>Use word count to determine how many lines this file has, which should be the same as the number of files</p>
+</section>
+<section id="counting-the-number-of-sequence-records-in-a-fastq-file">
+<h3>1.2.2 Counting the number of sequence records in a fastq file<a class="headerlink" href="#counting-the-number-of-sequence-records-in-a-fastq-file" title="Permalink to this headline">#</a></h3>
+<p>For each of these files you can now count the number of fastq sequence records they contain. There are several ways you could do this, but a simple one is to understand that each fastq sequence record is 4 lines, so counting the lines and dividing by 4 should give the answer.</p>
+<p>You previously saw how to do this for a fasta file with <code class="docutils literal notranslate"><span class="pre">echo</span></code>. The fastq files provided for you are slightly more complicated, but its the same approach. The 2 examples below should be mostly familiar but with a few additions:</p>
+<p>#yourfile.fastq</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$(cat</span> <span class="pre">yourfile.fastq|wc</span> <span class="pre">-l)/4|bc</span></code></p>
+<p>#yourfile.fastq.gz</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$(zcat</span> <span class="pre">yourfile.fastq.gz|wc</span> <span class="pre">-l)/4|bc</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$</span></code> is used to keep track of the value found.</p>
+<p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> counts the number of lines</p>
+<p>The final <code class="docutils literal notranslate"><span class="pre">|bc</span></code> pipes the data to a command line calculator, required because we’re dividing by 4</p>
+<p><code class="docutils literal notranslate"><span class="pre">zcat</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">cat</span></code> but works on compressed data like <code class="docutils literal notranslate"><span class="pre">.fastq.gz</span></code></p>
+<p>Give it a go and see if you can find the number of records in a fastq file</p>
+</section>
+<section id="scaling-the-approach">
+<h3>1.2.3 scaling the approach<a class="headerlink" href="#scaling-the-approach" title="Permalink to this headline">#</a></h3>
+<p>Good work, you now know the number of sequences in your fastq file. The problem is that you have a lot of these and it is tedious and error-prone to repeat this so many times. Fortunately you already know how to automate it by using wildcards!</p>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command from before to process all the <code class="docutils literal notranslate"><span class="pre">.fastq.gz</span></code> files in the directory.</p>
+<p>Good, but in order to record and preserve the data you should write this to a file</p>
+</section>
+<section id="formatting-the-output">
+<h3>1.2.4 Formatting the output<a class="headerlink" href="#formatting-the-output" title="Permalink to this headline">#</a></h3>
+<p>Excellent. The problem you have is that your file names and their sequence record counts are now in different text files. You really need these together so that you can construct a table. Fortunately you already know how to do this!</p>
+<p>In section 5.3 of the previous notebook it taught you how to introduce tabs (<code class="docutils literal notranslate"><span class="pre">\t</span></code>) and line breaks (<code class="docutils literal notranslate"><span class="pre">\n</span></code>). You could now write a command that uses <code class="docutils literal notranslate"><span class="pre">echo</span></code> to write the <code class="docutils literal notranslate"><span class="pre">.fastq.gz</span></code> filename to a new file, followed by a tab, followed by the number of sequence records in that file, followed by a newline.</p>
+<p>You could (optionally) give that a go below, I’m sure some of you are up for the challenge! I’d be interested to see how you do it.</p>
+</section>
+<section id="seqkit-an-easier-way-to-characterise-sequence-data">
+<h3>1.2.5 <code class="docutils literal notranslate"><span class="pre">seqkit</span></code> an easier way to characterise sequence data<a class="headerlink" href="#seqkit-an-easier-way-to-characterise-sequence-data" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">echo</span></code> command is very powerful, but is starting to get very complex, and complexity can lead to undetected errors. Bioinformaticians therefore try not to reinvent the wheel each time they work, and there are programs which wrap all the complexity up and make it easier to operate on your data.</p>
+<p>We are going to use the program <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">stats</span></code> which will survey and report for us. You can treat it like any of the other programs you have used (<code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">grep</span></code>, <code class="docutils literal notranslate"><span class="pre">echo</span></code>) where you first type the program name and give flags to modify its behaviour and control where it writes the output.</p>
+<p>You can find details of the <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">stats</span></code> flags and usage at <a class="reference external" href="https://bioinf.shenwei.me/seqkit/usage/#stats">this link</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">stats</span> <span class="pre">*.fastq.gz</span></code> should provide you with an interesting table</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">filename.txt</span></code> to direct its output from the screen to a file, and the <code class="docutils literal notranslate"><span class="pre">-T</span></code> flag separates by tabs, sometimes allowing you easier formatting at a later date, perhaps in Excel.</p>
+<p>The total amount of sequence data you are processing (number of base pairs) is then just the total of the <code class="docutils literal notranslate"><span class="pre">sum_len</span></code> column values.</p>
+<p>You now have answers to the 3 questions from section 1.2 above. Make sure that you document these.</p>
+</section>
+</section>
+<section id="qc-of-the-data">
+<h2>2. QC of the data<a class="headerlink" href="#qc-of-the-data" title="Permalink to this headline">#</a></h2>
+<p>Is the data any good? What if 10% is really bad and including it messes everything up? What do we mean by ‘bad’ and what sort of QC can improve our assembly?</p>
+<p>The goal of this QC section is to quality control the data so that we are confident we have the best assembly we could have generated with the methods we have chosen.</p>
+<p>We could have a long conversation about the meaning of “bad” data, but here it practically falls into 2 categories:</p>
+<ol class="simple">
+<li><p>sequences with very low Phred quality scores</p></li>
+<li><p>sequences that are very short</p></li>
+</ol>
+<p>We are going to use the <a class="reference external" href="https://github.com/OpenGene/fastp">fastp</a> program to filter sequences by quality score and by length.</p>
+<p>Chen S, Zhou Y, Chen Y, Gu J. fastp: an ultra-fast all-in-one FASTQ preprocessor. Bioinformatics. 2018;34: i884–i890. doi:<a class="reference external" href="https:///dx.doi.org/10.1093/bioinformatics/bty560">10.1093/bioinformatics/bty560</a></p>
+<section id="filtering-by-read-quality-and-length">
+<h3>2.1 Filtering by read quality and length<a class="headerlink" href="#filtering-by-read-quality-and-length" title="Permalink to this headline">#</a></h3>
+<p>Look at the <a class="reference external" href="https://github.com/OpenGene/fastp#quality-filter">fastp help page</a> and try to write a command to filter by quality and length. NB you have single-end data not paired-end (that is for short Illumina sequencing).</p>
+<p>What and where is you input data? Remember to use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag to identify this.</p>
+<p>Where do you want your output data to be written? Remeber to specify it with the <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag and then a directory name and location. If you output name ends with <code class="docutils literal notranslate"><span class="pre">.gz</span></code> your data will be nicely compressed for you. You will want to distinguish it from your raw data of course. Maybe create a directory called <code class="docutils literal notranslate"><span class="pre">seqs-qc</span></code> or something similar. The command to make a new directory is <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> so <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">data/seqs-qc</span></code> could be what you need.</p>
+<p>We wish to exclude all sequences less than 500bp as these are not high quality data.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">-l</span></code> flag to say that the length required is 500</p>
+<p>You may also want to add the <code class="docutils literal notranslate"><span class="pre">-h</span></code> flag to specify a report should be written, see below.</p>
+<p>Write your command below and discuss among yourselves and with one of us. Do not actually run fastp on your data until we have checked it.</p>
+</section>
+<section id="re-characterising-the-data">
+<h3>2.2 Re-characterising the data<a class="headerlink" href="#re-characterising-the-data" title="Permalink to this headline">#</a></h3>
+<p>Now that you have applied QC criteria to the data how has it changed?</p>
+<p>Can you use <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">stats</span></code> again to produce a simple table of your sequences? Remember the data is in a new dierctory.</p>
+<p>fastp also produces a graphical and tabular report on what it has done, these are sometimes a little harder to interpret but see what you can make of it first and ask for help. The fastp flag to write an html report is <code class="docutils literal notranslate"><span class="pre">-h</span></code></p>
+</section>
+<section id="id1">
+<h3>Competencies<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Your final competency this week is to produce appropriate tabular and/or graphical descriptions of your sequence and assembly data.</p>
+<p>You have already tablulated your data calculating how many files, how many sequence records, lengths and some other statistics. You have done this before and after QC. What would be an appropriate way to show this in your manuscript? Discuss with your colleagues and throw around a few ideas, make a plan for how to do this.</p>
+<p>In order to get marks for the competency you need to be clear and concise and focussed. Don’t produce 10 pages that are hard to read a couple of simple tables with legends are fine. If you want to do figures too, great.</p>
+<p>For your final manuscript you may want to polish things up a bit. Don’t forget that the Department provide R stats help for all students, so if you are struggling with diagrams then there is a Teams group to help, please ask.</p>
+<HR></section>
+</section>
+<section id="extra-reading">
+<h2>Extra Reading<a class="headerlink" href="#extra-reading" title="Permalink to this headline">#</a></h2>
+<p>Altuna Akalin. Computational Genomics with R. Free online book. <a class="reference external" href="https://compgenomr.github.io/book/">https://compgenomr.github.io/book/</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./weekC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1.Intro_unix_command_line.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introduction to the unix command line</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3.taxonomic_ID.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Taxonomic ID</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dave Lunt et al<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

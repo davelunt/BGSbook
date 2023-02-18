@@ -1,0 +1,1986 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to the unix command line &#8212; BGS course book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysis and Quality Control of Sequence Data" href="2.sequence_QC.html" />
+    <link rel="prev" title="Week C manual" href="weekC_manual.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/BGSlogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BGS course book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Bacterial Genome Sequencing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/index.html">
+   BGS course manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/facilities.html">
+   Facilities and Equipment for the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/assessments.html">
+   Assessments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week A microbiology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekA/microbiology.html">
+   Week A Microbiology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week B sequencing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/weekB_manual.html">
+   Week B manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week C assembly
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="weekC_manual.html">
+   Week C manual
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to the unix command line
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.sequence_QC.html">
+   sequence_QC.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.taxonomic_ID.html">
+   taxonomic_ID.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.assembly.html">
+   assembly.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week D annotation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/weekD_manual.html">
+   Week D manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/5.AMR_detection.html">
+   AMR_detection.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week E antibiotics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekE/antibiotics.html">
+   Week E: Student-led experiments
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/weekC/1.Intro_unix_command_line.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FweekC/1.Intro_unix_command_line.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/weekC/1.Intro_unix_command_line.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to the unix command line
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-outcomes">
+     Learning Outcomes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-assessments">
+     Competency Assessments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of Contents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-the-command-line-and-jupyter-notebooks">
+   1. Introduction to the command line and Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-the-file-system">
+   2 Navigating the file system
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checking-where-you-are-pwd-changing-directories-cd-and-listing-contents-ls">
+     2.1 Checking where you are (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pwd
+      </span>
+     </code>
+     ), changing directories (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cd
+      </span>
+     </code>
+     ) and listing contents (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ls
+      </span>
+     </code>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#where-am-i-pwd">
+       2.1.1 Where am I?
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pwd
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#listing-the-contents-of-a-directory-with-ls">
+       2.1.2 Listing the contents of a directory with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ls
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#changing-directories-with-cd">
+       2.1.3 Changing directories with cd
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#up-one-level-with-a-double-dot">
+         up one level with a double dot
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#home-directory">
+         home directory
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#previous-directory-with-a-dash">
+         previous directory with a dash
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion-saves-time-and-errors">
+       2.1.4 tab completion saves time and errors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chaining-commands-together-with-a-semicolon">
+       2.1.5 Chaining commands together with a semicolon
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-1-ways-to-return-home">
+     Quiz 1: Ways to return home
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       2.1.6 Summary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspecting-file-contents-and-searching-within-text-files">
+   3 Inspecting file contents, and searching within text files
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspecting-files">
+     3.1 Inspecting files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#big-files">
+       big files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-part-a-viewing-files">
+     Competency part A - viewing files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-within-files-grep">
+     3.2 Searching within files
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       grep
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#flags">
+       Flags
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-sequences-do-i-have">
+       3.2.1 How many sequences do I have?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-part-b-grep">
+   Competency part B
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     grep
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     3.3 Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-2-googling-is-ok">
+     Quiz 2 (Googling is OK)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wildcards">
+   4 Wildcards
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-wildcards">
+     4.1 What are wildcards?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-using-wildcards">
+     4.2 Listing using wildcards
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-3">
+     Quiz 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unix-commands-are-case-sensitive">
+     4.3 unix commands are case sensitive
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-filtering-and-copying">
+     4.4 file filtering and copying
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wildcards-optional-extras">
+     4.5 Wildcards, optional extras
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-wildcard">
+       4.5.1 the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ?
+        </span>
+       </code>
+       wildcard
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-range-operator-wildcard">
+       4.5.2 the range operator (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         [
+        </span>
+        <span class="pre">
+         ]
+        </span>
+       </code>
+       ) wildcard
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-replace-and-write-output-to-a-new-file">
+   5 Search, replace, and write output to a new file
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo-to-write-data">
+     5.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+     to write data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#routing-determine-where-your-data-goes">
+     5.2 routing, determine where your data goes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-3-concatenation">
+     Quiz 3 Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-stucturing-data-files-with-echo">
+     5.3 (Optional) stucturing data files with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echo-and-file-names">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         echo
+        </span>
+       </code>
+       and file names
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sed-the-stream-editor">
+     5.4
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sed
+      </span>
+     </code>
+     , the stream editor
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sorting-and-filtering-lists">
+   6 Sorting and filtering lists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-characters-words-and-lines">
+     6.1 counting characters, words, and lines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sort-uniq">
+     6.2 sort uniq
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-part-c-cancer-associated-gene-lists">
+   Competency part C: cancer associated gene lists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differential-expression-of-genes-in-cancer-tissue">
+     Differential expression of genes in cancer tissue
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis">
+     Analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organising-the-data-into-files">
+     Organising the data into files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-and-counting-gene-names">
+     Sorting and counting gene names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-really-important-don-t-skip-section-7">
+   THIS IS REALLY IMPORTANT DON’T SKIP SECTION 7
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uploading-your-competency-work">
+     7. Uploading your competency work
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-are-now-completely-finished-well-done">
+   YOU ARE NOW COMPLETELY FINISHED, WELL DONE
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-1-the-fasta-file-format">
+   Appendix 1 the fasta file format
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#here-is-the-description-of-fasta-from-genbank">
+     Here is the description of FASTA from GenBank.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fasta-format-records-and-fasta-files">
+     Fasta format records and fasta files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#appendix-2">
+     Appendix 2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-reading-if-you-wish-to-extend-your-knowledge">
+       Some reading if you wish to extend your knowledge
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to the unix command line</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to the unix command line
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-outcomes">
+     Learning Outcomes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-assessments">
+     Competency Assessments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-of-contents">
+     Table of Contents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-the-command-line-and-jupyter-notebooks">
+   1. Introduction to the command line and Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-the-file-system">
+   2 Navigating the file system
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checking-where-you-are-pwd-changing-directories-cd-and-listing-contents-ls">
+     2.1 Checking where you are (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pwd
+      </span>
+     </code>
+     ), changing directories (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       cd
+      </span>
+     </code>
+     ) and listing contents (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ls
+      </span>
+     </code>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#where-am-i-pwd">
+       2.1.1 Where am I?
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pwd
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#listing-the-contents-of-a-directory-with-ls">
+       2.1.2 Listing the contents of a directory with
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ls
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#changing-directories-with-cd">
+       2.1.3 Changing directories with cd
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#up-one-level-with-a-double-dot">
+         up one level with a double dot
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#home-directory">
+         home directory
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#previous-directory-with-a-dash">
+         previous directory with a dash
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tab-completion-saves-time-and-errors">
+       2.1.4 tab completion saves time and errors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#chaining-commands-together-with-a-semicolon">
+       2.1.5 Chaining commands together with a semicolon
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-1-ways-to-return-home">
+     Quiz 1: Ways to return home
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary">
+       2.1.6 Summary
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspecting-file-contents-and-searching-within-text-files">
+   3 Inspecting file contents, and searching within text files
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspecting-files">
+     3.1 Inspecting files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#big-files">
+       big files
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-part-a-viewing-files">
+     Competency part A - viewing files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-within-files-grep">
+     3.2 Searching within files
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       grep
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#flags">
+       Flags
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-many-sequences-do-i-have">
+       3.2.1 How many sequences do I have?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-part-b-grep">
+   Competency part B
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     grep
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     3.3 Summary
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-2-googling-is-ok">
+     Quiz 2 (Googling is OK)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wildcards">
+   4 Wildcards
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-wildcards">
+     4.1 What are wildcards?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-using-wildcards">
+     4.2 Listing using wildcards
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-3">
+     Quiz 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unix-commands-are-case-sensitive">
+     4.3 unix commands are case sensitive
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-filtering-and-copying">
+     4.4 file filtering and copying
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wildcards-optional-extras">
+     4.5 Wildcards, optional extras
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-wildcard">
+       4.5.1 the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ?
+        </span>
+       </code>
+       wildcard
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-range-operator-wildcard">
+       4.5.2 the range operator (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         [
+        </span>
+        <span class="pre">
+         ]
+        </span>
+       </code>
+       ) wildcard
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#search-replace-and-write-output-to-a-new-file">
+   5 Search, replace, and write output to a new file
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#echo-to-write-data">
+     5.1
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+     to write data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#routing-determine-where-your-data-goes">
+     5.2 routing, determine where your data goes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quiz-3-concatenation">
+     Quiz 3 Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-stucturing-data-files-with-echo">
+     5.3 (Optional) stucturing data files with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       echo
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#echo-and-file-names">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         echo
+        </span>
+       </code>
+       and file names
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sed-the-stream-editor">
+     5.4
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sed
+      </span>
+     </code>
+     , the stream editor
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sorting-and-filtering-lists">
+   6 Sorting and filtering lists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-characters-words-and-lines">
+     6.1 counting characters, words, and lines
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sort-uniq">
+     6.2 sort uniq
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-part-c-cancer-associated-gene-lists">
+   Competency part C: cancer associated gene lists
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differential-expression-of-genes-in-cancer-tissue">
+     Differential expression of genes in cancer tissue
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis">
+     Analysis
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#organising-the-data-into-files">
+     Organising the data into files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-and-counting-gene-names">
+     Sorting and counting gene names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-is-really-important-don-t-skip-section-7">
+   THIS IS REALLY IMPORTANT DON’T SKIP SECTION 7
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uploading-your-competency-work">
+     7. Uploading your competency work
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-are-now-completely-finished-well-done">
+   YOU ARE NOW COMPLETELY FINISHED, WELL DONE
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-1-the-fasta-file-format">
+   Appendix 1 the fasta file format
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#here-is-the-description-of-fasta-from-genbank">
+     Here is the description of FASTA from GenBank.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fasta-format-records-and-fasta-files">
+     Fasta format records and fasta files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#appendix-2">
+     Appendix 2
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-reading-if-you-wish-to-extend-your-knowledge">
+       Some reading if you wish to extend your knowledge
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-unix-command-line">
+<h1>Introduction to the unix command line<a class="headerlink" href="#introduction-to-the-unix-command-line" title="Permalink to this headline">#</a></h1>
+<p>In this practical class you will be introduced to Bioinformatics, the computational study of large scale DNA or amino acid data.</p>
+<p>Bioinformatics is a truly central discipline in all of biology, scientists with bioinformatics skills are highly sought after and the employment opportunities are superb. Our learning goals are that you will have the skills to begin a bioinformatics investigation, and these same skills will also make you excellent at handling big data more generally.</p>
+<p><strong>DON’T PANIC! YOU DO NOT NEED COMPUTATIONAL SKILLS TO CARRY OUT THIS ASSESSMENT. EVERYTHING YOU NEED TO KNOW YOU CAN LEARN IN THIS CLASS</strong></p>
+<p>It is essential however that you engage with the exercises, reading them carefully, trying for yourself, and asking questions of your lab partners and the demonstrators.</p>
+<p><strong>TIP</strong></p>
+<p>If I had to pick one thing that makes the biggest difference in how easily students learn this it would be <strong>re-typing and trying the commands for themselves in this notebook</strong> not just reading how to do it.</p>
+<section id="learning-outcomes">
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">#</a></h2>
+<p>At the end of this class you should:</p>
+<ul class="simple">
+<li><p><strong>Understand the utility</strong> of the command line</p></li>
+<li><p>Be able to <strong>navigate</strong> files and directories from the command line</p></li>
+<li><p>Perform <strong>grep searches</strong> on very large files</p></li>
+<li><p>Be able to <strong>sort</strong>, filter and manipulate data sets</p></li>
+</ul>
+</section>
+<section id="competency-assessments">
+<h2>Competency Assessments<a class="headerlink" href="#competency-assessments" title="Permalink to this headline">#</a></h2>
+<p>The competencies you must demonstrate highlighted in this document. Read the instructions for each, then type out and run the commands to give the appropriate output. You will be taught how to do this before the competency, it is just a demonstration that you have the skills. You can do them as many times as you wish until you have it to your satisfaction</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Introduction to the command line and Jupyter notebooks</p></li>
+<li><p>Navigating the file system</p></li>
+<li><p>Inspecting file contents</p>
+<ul class="simple">
+<li><p>Competency part 1 viewing files</p></li>
+<li><p>Competency part 2 grep searching</p></li>
+</ul>
+</li>
+<li><p>Wildcards</p></li>
+<li><p>Search, replace, and write output to a new file</p></li>
+<li><p>Sorting and filtering lists</p>
+<ul class="simple">
+<li><p>Competency part 3 cancer associated gene lists</p></li>
+</ul>
+</li>
+<li><p>Uploading your competency evidence to Canvas</p></li>
+</ol>
+<HR></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-command-line-and-jupyter-notebooks">
+<h1>1. Introduction to the command line and Jupyter notebooks<a class="headerlink" href="#introduction-to-the-command-line-and-jupyter-notebooks" title="Permalink to this headline">#</a></h1>
+<p>Below we will give only a very simple overview. The best way to learn the command line is to Google search for instructions and then try it yourself, experimenting as much as you can. We have also given links to other teaching resources at the end.</p>
+<p>Here we have embedded the unix command line into a Jupyter notebook so that you have the manual and the exercises together. A normal terminal would be a seperate window (you used one for the git clone command), but otherwise it is the same. In the instructions in this notebook we denote commands typed at the terminal with a <code class="docutils literal notranslate"><span class="pre">$</span></code> sign, whereas the output, the info returned by the terminal, has no dollar sign.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ a typed command
+output output output
+</pre></div>
+</div>
+<p>The <em>actual</em> terminal sections are the grey cells (boxes) prefixed by <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code><br />
+Here is one:</p>
+<p>You can run commands in a terminal cell by clicking in it, typing a command, and then Shift-Enter to run the command. Else you click the triangular run button in the menu bar. Try it below, the ‘hello world’ echo command has been entered for you.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;Hello World!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Clicking in the box and pressing Shift-Enter will display the output <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> direcly below the cell. We’ll introduce the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command later but you can probably already guess what it does.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="navigating-the-file-system">
+<h1>2 Navigating the file system<a class="headerlink" href="#navigating-the-file-system" title="Permalink to this headline">#</a></h1>
+<p>The first thing to do is to learn the basics of moving between places on your computer, checking where you are, checking what files are present and having a quick look at them.</p>
+<p>Some of the terminology is perhaps slightly new (‘directories’ rather than ‘folders’) but using the right words will mean you are speaking the same language as everyone else and make your life easier when Googling for solutions (yes Googling is encouraged, it is NOT cheating).</p>
+<p><strong>THIS IS IMPORTANT –&gt; As the navigation commands are introduced below try them on your own system</strong></p>
+<section id="checking-where-you-are-pwd-changing-directories-cd-and-listing-contents-ls">
+<h2>2.1 Checking where you are (<code class="docutils literal notranslate"><span class="pre">pwd</span></code>), changing directories (<code class="docutils literal notranslate"><span class="pre">cd</span></code>) and listing contents (<code class="docutils literal notranslate"><span class="pre">ls</span></code>)<a class="headerlink" href="#checking-where-you-are-pwd-changing-directories-cd-and-listing-contents-ls" title="Permalink to this headline">#</a></h2>
+<section id="where-am-i-pwd">
+<h3>2.1.1 Where am I? <code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#where-am-i-pwd" title="Permalink to this headline">#</a></h3>
+<p>At the command line you need to know “where you are” i.e. which directory (folder) you have open and are working in. Question: If you issue the command to ‘list all files’ which files will be listed? Answer: Those in the directory where you are currently working, called the <strong>working directory</strong>. The command to find out where you are is <code class="docutils literal notranslate"><span class="pre">pwd</span></code> short for ‘print working directory’. NB: ‘print’ when working at the command line means ‘display on the screen’ rather than ‘write this to a piece of paper’.</p>
+<p>Type the command to print working directory (<code class="docutils literal notranslate"><span class="pre">pwd</span></code>) below, and hit Shift-Enter to run the command.</p>
+<p>You should see something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd
+/home/bs/username/BGS
+</pre></div>
+</div>
+<p><strong>Tip:</strong> if you want to try something and there isn’t an empty terminal cell, use the menu bar + to Insert Cell</p>
+<p><strong>Try inserting a cell below and check your working directory again</strong></p>
+<p>It would be useful now to know what folders and files are present in this location</p>
+</section>
+<section id="listing-the-contents-of-a-directory-with-ls">
+<h3>2.1.2 Listing the contents of a directory with <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#listing-the-contents-of-a-directory-with-ls" title="Permalink to this headline">#</a></h3>
+<p>A very common thing you will want to do is to <strong>display the contents of a directory</strong>, i.e. list all the files.</p>
+<p>You can list the files (and directories) in your working directory using the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command. Try <code class="docutils literal notranslate"><span class="pre">ls</span></code> now</p>
+<p>You will see the files and directories in your current folder displayed by <code class="docutils literal notranslate"><span class="pre">ls</span></code>. The jupyter notebook you are now reading will have the extension <code class="docutils literal notranslate"><span class="pre">.ipnb</span></code>, there are 4 Jupyter notebooks in total. There are also <a class="reference external" href="http://README.md">README.md</a> and LICENCE files which may be ignored (though you will soon learn how to examine them if you wish). There will also be a directories called <strong>/data</strong> and <strong>/images</strong> that may be displayed in a different colour to show that it is a directory not a file.</p>
+</section>
+<section id="changing-directories-with-cd">
+<h3>2.1.3 Changing directories with cd<a class="headerlink" href="#changing-directories-with-cd" title="Permalink to this headline">#</a></h3>
+<p>But maybe this isn’t where you want to be, maybe you need to have a look at your new data, in which case you need to <code class="docutils literal notranslate"><span class="pre">‘change</span> <span class="pre">directory’</span></code> and the command for that is <code class="docutils literal notranslate"><span class="pre">cd</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd data
+$ cd my_sequences
+$ pwd
+
+/home/bs/username/BGS/data/my_sequences
+</pre></div>
+</div>
+<HR>
+<p><strong>Explanation:</strong> Spaces in file and directory names cause difficulties as spaces are treated as the end of a file name. When looking for ‘my sequences’ it complains that it can’t find ‘my’.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd my sequences
+-bash: cd: my: No such file or directory
+</pre></div>
+</div>
+<p>Although this can be got around by using quotes ‘<code class="docutils literal notranslate"><span class="pre">my</span> <span class="pre">file</span></code>’ it is better to name files replacing spaces with underscores (e.g. <code class="docutils literal notranslate"><span class="pre">my_file</span></code>), hyphens (e.g. <code class="docutils literal notranslate"><span class="pre">my-file</span></code>), or concatenating the words (e.g. <code class="docutils literal notranslate"><span class="pre">myfile</span></code>).</p>
+<HR><p><strong>Try navigating for yourself down to the <code class="docutils literal notranslate"><span class="pre">my_sequences</span></code> directory as outlined above.</strong> Remember you can add extra cells, and use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code> to help you</p>
+<p>You can see that the <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol denotes levels of directories, so that the ‘my_sequences’ directory is contained within the ‘data’ directory which is within the user’s ‘home’ directory, and ultimately in the system’s ‘home’ directory.</p>
+<p>These <strong>file paths</strong> can sometimes be long but they are always explicit, which is a very good thing for reproducibility. There is no excuse for failing to remember where the data was stored for your analysis, here it is written out, and in the real world you will want to record this as part of your experiment.</p>
+<section id="up-one-level-with-a-double-dot">
+<h4>up one level with a double dot<a class="headerlink" href="#up-one-level-with-a-double-dot" title="Permalink to this headline">#</a></h4>
+<p>You can go up one level (to ‘data’) by using double dots (ensure there is always a space between the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command and the directory you wish to go to).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+$ pwd
+
+/home/bs/userename/BGS/data
+</pre></div>
+</div>
+<p><strong>Try it for yourself</strong> (remember to always try new commands for yourself, it is an important part of your learning, don’t wait for my typed reminders)</p>
+</section>
+<section id="home-directory">
+<h4>home directory<a class="headerlink" href="#home-directory" title="Permalink to this headline">#</a></h4>
+<p>What happens if you use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command without telling the system where you would like to change directories to?<br />
+Try it. How can you find out which directory you are now in?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd 
+$ pwd 
+/home/bs/username
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">cd</span></code> command on its own returns you to your <strong>user’s home directory</strong>, in this case <code class="docutils literal notranslate"><span class="pre">/username</span></code> from wherever you are. NB it is <strong>your</strong> home directory, in my case called davelunt, and its nested within the directory called home by the computer where all users’ directories are kept. <strong>your home directory</strong> is an important concept, this other home folder is the only difficult part, and can be ignored for the rest of today. In the example below <em>username</em> means your username, whatever it is.</p>
+<p>The tilde symbol (<code class="docutils literal notranslate"><span class="pre">~</span></code>) is shorthand for your home directory so <code class="docutils literal notranslate"><span class="pre">username/BGS</span></code> and <code class="docutils literal notranslate"><span class="pre">~/BGS</span></code> refer to the same directory, which saves a little typing.</p>
+</section>
+<section id="previous-directory-with-a-dash">
+<h4>previous directory with a dash<a class="headerlink" href="#previous-directory-with-a-dash" title="Permalink to this headline">#</a></h4>
+<p>Another very useful shortcut is <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> (dash) which takes you to the previous directory that you were in. This is really useful when you need to swap between directories that are separated by several levels or that have long names.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~/BGS/data/my_sequences
+$ pwd
+/home/bs/username/BGS/data/my_sequences
+$ cd
+$ pwd
+/home/bs/username
+$ cd -
+$ pwd
+/home/bs/username/BGS/data/my_sequences
+$ cd -
+$ pwd
+/home/bs/username
+</pre></div>
+</div>
+<p>Make sure that you are actually typing this out for yourself rather than just reading along. Work through the example above. This <strong>active learning</strong> will really help it to stick in memory, and come back when you need it, a bit like developing muscle memory.</p>
+</section>
+</section>
+<section id="tab-completion-saves-time-and-errors">
+<h3>2.1.4 tab completion saves time and errors<a class="headerlink" href="#tab-completion-saves-time-and-errors" title="Permalink to this headline">#</a></h3>
+<p>You are probably slightly annoyed now that you have to type in all these directory names, which are long and complex. If you make one typo it will result in an error. Real bioinformaticians make use of the tab key a lot. tab will suggest completions of your file path.</p>
+<p>If I am in the home directory and I type <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">BGS/data/m&lt;tab&gt;</span></code> it will autocomplete to <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">BGS/data/my_sequences</span></code></p>
+<p>Because of the way this Jupyter notebook is set up it may instead give you a list of options, you can navigate using the arrow keys, and hit RETURN when you have the right option.
+This saves a LOT of typing and prevents errors. Insert a cell below and try it now.</p>
+</section>
+<section id="chaining-commands-together-with-a-semicolon">
+<h3>2.1.5 Chaining commands together with a semicolon<a class="headerlink" href="#chaining-commands-together-with-a-semicolon" title="Permalink to this headline">#</a></h3>
+<p>Above we were issuing commands one at a time; first <code class="docutils literal notranslate"><span class="pre">cd</span></code> then <code class="docutils literal notranslate"><span class="pre">pwd</span></code>. To chain commands together on the same line separate them with a semicolon ie <code class="docutils literal notranslate"><span class="pre">cd;pwd</span></code></p>
+<p>Try the exercise from the <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> section above again, but now using semicolons. You should only need 4 commands not 8.</p>
+<p>Are you tab completing the addresses?</p>
+</section>
+</section>
+<section id="quiz-1-ways-to-return-home">
+<h2>Quiz 1: Ways to return home<a class="headerlink" href="#quiz-1-ways-to-return-home" title="Permalink to this headline">#</a></h2>
+<p>There are 5 ways that you should now know to return to your home directory. Most people only remember 2 or 3, what can you do? Please work with someone nearby, tell a demonstrator, list them below, and we’ll see who are the champions.</p>
+<section id="summary">
+<h3>2.1.6 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>	<span class="nb">print</span> <span class="n">working</span> <span class="n">directory</span><span class="p">,</span> <span class="n">show</span> <span class="n">where</span> <span class="n">you</span> <span class="n">are</span>
+<span class="n">ls</span>	<span class="nb">list</span><span class="p">,</span> <span class="n">show</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">current</span> <span class="n">directory</span>
+<span class="n">cd</span>	<span class="n">change</span> <span class="n">directory</span><span class="p">,</span> <span class="n">move</span> <span class="n">to</span> <span class="n">another</span> <span class="n">location</span>
+<span class="p">;</span>	<span class="n">semicolons</span> <span class="n">can</span> <span class="n">chain</span> <span class="n">together</span> <span class="n">commands</span> <span class="n">on</span> <span class="n">one</span> <span class="n">line</span>
+</pre></div>
+</div>
+<HR>
+<p>PAUSE HERE AND CHECK BEFORE GOING FURTHER</p>
+<HR></section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="inspecting-file-contents-and-searching-within-text-files">
+<h1>3 Inspecting file contents, and searching within text files<a class="headerlink" href="#inspecting-file-contents-and-searching-within-text-files" title="Permalink to this headline">#</a></h1>
+<section id="inspecting-files">
+<h2>3.1 Inspecting files<a class="headerlink" href="#inspecting-files" title="Permalink to this headline">#</a></h2>
+<p>Much of bioinformatics is the inspection and retrieval of information from text files. This data is the source of all subsequent analyses and we need to make sure it is the right data in the right format.</p>
+<p>If we  want to inspect a file we can display its contents using several unix programs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span>  	<span class="n">to</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">screen</span>
+<span class="n">head</span> 	<span class="n">to</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">first</span> <span class="n">few</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">on</span> <span class="n">screen</span>
+<span class="n">tail</span> 	<span class="n">to</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">last</span> <span class="n">few</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span> <span class="n">on</span> <span class="n">screen</span>
+</pre></div>
+</div>
+<p>One of the problems with DNA sequence files is that they can be large - several hundred megabytes to a few gigabytes is not uncommon. Viewing these files can be difficult, as the files need to be loaded into memory, and can therefore take a great deal of time for the text editor to read from the disk. The <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> commands are very efficient for viewing large files such as these.</p>
+<p>Remember Googling things is encouraged, it is a great way to learn bioinformatics! Google <code class="docutils literal notranslate"><span class="pre">unix</span> <span class="pre">command</span> <span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> to learn more about them if you wish.</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> display 10 lines by defualt, but they allow you to specify the number of lines to display, so <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-20</span></code> would display the first 20 lines and <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-5</span></code> the last 5 lines.</p>
+<p>Remembering tab completion navigate to the directory <code class="docutils literal notranslate"><span class="pre">/data/my_sequences</span></code>. Tip; when navigating use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to see what is available.</p>
+<p>Some of these files e.g. <code class="docutils literal notranslate"><span class="pre">C.09.F.fasta</span></code> are quite large (~30Mb), while the others are smaller. Only one of the commands above is inappropriate for large files all the others will be useful. If you have a problem don’t panic, ask a demonstrator.</p>
+<section id="big-files">
+<h3>big files<a class="headerlink" href="#big-files" title="Permalink to this headline">#</a></h3>
+<p>Which commands should you use for big or small files and why? The problem is that if you command a really big file to display to the screen (eg <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">mybigfile.fasta</span></code>) then it will just keep scrolling data in an unhelpful way. <strong>Tip</strong> <code class="docutils literal notranslate"><span class="pre">control-z</span></code> can make it stop. If you want to try it on <code class="docutils literal notranslate"><span class="pre">C.09.F.fasta</span></code> go ahead, you can’t do any damage. Ask a demonstrator to help you clean up afterwards</p>
+<p>If unsure about the size of a file <code class="docutils literal notranslate"><span class="pre">head</span></code> is a good way to have a quick look at it. If you actually want to know how big a file is you can display this with a version of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lh</span></code> Try it.</p>
+<p><strong>All the commands above will be very useful for basic bioinformatics work, they are key skills</strong></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="competency-part-a-viewing-files">
+<h2>Competency part A - viewing files<a class="headerlink" href="#competency-part-a-viewing-files" title="Permalink to this headline">#</a></h2>
+<p>Navigate to the <code class="docutils literal notranslate"><span class="pre">data/headers</span></code> directory.</p>
+<p>How big are the files?</p>
+<p>In the 3 cells below use each of the following commands to view the contents of the file <code class="docutils literal notranslate"><span class="pre">display-test.fas</span></code>.</p>
+<ol class="simple">
+<li><p>cat</p></li>
+<li><p>head</p></li>
+<li><p>tail</p></li>
+</ol>
+<p><strong>Bonus</strong> can you display the last 15 lines of <code class="docutils literal notranslate"><span class="pre">display-test.fas</span></code>? (optional)</p>
+<p>End of competency</p>
+<HR>
+PAUSE HERE AND CHECK BEFORE GOING FURTHER
+<HR></section>
+<section id="searching-within-files-grep">
+<h2>3.2 Searching within files <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#searching-within-files-grep" title="Permalink to this headline">#</a></h2>
+<p>Searching within very large files however can also be problematic, especially using the standard ‘find’ functions in a text editor, which aren’t optimised for performing searches across very large files. For this reason various tools have been created that allow users to search within large files from the command line, and are highly optimised for their function. One of the most useful utilities for searching within a file is <code class="docutils literal notranslate"><span class="pre">grep</span></code> (global regular expression parser).</p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is very simple to use. At the command line you will need to type the word <code class="docutils literal notranslate"><span class="pre">grep</span></code>, followed by the text you are searching for, followed by where (the filename) to look for it. For example, to search for the word Fungi in our <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code> file we do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~/BGS/data/my_sequences/
+$ grep &#39;Fungi&#39; 18S_seqs.fas
+&gt;AY642706_10 1401 Eukarya/Fungi
+</pre></div>
+</div>
+<p>This returns the text <code class="docutils literal notranslate"><span class="pre">&gt;AY642706_10</span> <span class="pre">1401</span> <span class="pre">Eukarya/Fungi</span></code> which is the single line that contains the word Fungi. This is the output of <code class="docutils literal notranslate"><span class="pre">grep</span></code>, the line on which the search phrase is found.</p>
+<p>Make sure that you are trying this for yourself, by inserting cells and giving the command</p>
+<p>We can confirm that there is only one instance by using the <strong>count flag</strong> (<code class="docutils literal notranslate"><span class="pre">-c</span></code>) with <code class="docutils literal notranslate"><span class="pre">grep</span></code> as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ grep -c &#39;Fungi&#39; 18S_seqs.fas
+1
+</pre></div>
+</div>
+<section id="flags">
+<h3>Flags<a class="headerlink" href="#flags" title="Permalink to this headline">#</a></h3>
+<p>Flags are useful things, they allow the default behaviour of a command to be refined.
+You have already used a flag (<code class="docutils literal notranslate"><span class="pre">-lh</span></code>) with the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to make it show you files sizes. Using flags to set parameters and modify the default settings is very comman in bioinformatics.</p>
+</section>
+<section id="how-many-sequences-do-i-have">
+<h3>3.2.1 How many sequences do I have?<a class="headerlink" href="#how-many-sequences-do-i-have" title="Permalink to this headline">#</a></h3>
+<p>A very common question is to ask is ‘how many DNA sequence records are in this enormous fasta file?’</p>
+<p><strong>Tip: Do you know what a sequence record looks like? Quickly learn about fasta sequence files from Appendix 1. Now try to see if the sequence file ‘18S_seqs.fas’ matches your expectations. You already have the skills to do this without loading the whole file into memory, can you remember how? Check above if not.</strong></p>
+<p>In order to find out the number of sequences you could of course search for all the greater than <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols, which is almost certainly the number of records. However, you should really search for all the lines <em>starting with</em> &gt; rather than the number of times it occurs, as it is possible for a fasta header to contain an internal &gt; . ‘Line starts with’ is represented by the <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol.</p>
+<p>Try to design a <code class="docutils literal notranslate"><span class="pre">grep</span></code> search to count the number of fasta header lines. Do not copy/paste from any web resource. Discuss your solution with your partner and/or demonstrator.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="competency-part-b-grep">
+<h1>Competency part B <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#competency-part-b-grep" title="Permalink to this headline">#</a></h1>
+<p>Use a <code class="docutils literal notranslate"><span class="pre">grep</span></code> search to count the number of fasta header lines in the two files <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code> and  <code class="docutils literal notranslate"><span class="pre">C.09.F.fasta</span></code>. Ensure that the searches and output are below.</p>
+<p>End of competency</p>
+<p><strong>Help in case of problems:</strong></p>
+<p>Have you remembered the quotation marks around the search phrase? (eg <code class="docutils literal notranslate"><span class="pre">'Fungi'</span></code>)</p>
+<p>Unfortunately if you haven’t use quotes your solution may delete the data file! Why? Look at section 5 below and discuss. If you have deleted your file a spare file can be found in <code class="docutils literal notranslate"><span class="pre">/data/backup</span></code>. You only need to copy from /backup if you have deleted your file. Can you find a way from the command line to <strong>copy</strong> this file to your current directory? Google for a solution on how to copy a file at the unix command line. Try it, and list the files to see if you have been successful. Check with a demonstrator if you need.</p>
+<p>You may try your <code class="docutils literal notranslate"><span class="pre">grep</span></code> search again in a new cell below and still get the marks for completing this assessment. A correct <code class="docutils literal notranslate"><span class="pre">grep</span></code> for counting sequence records, and using it to search these two files will get you the marks</p>
+<HR><section id="id1">
+<h2>3.3 Summary<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span>	<span class="n">show</span> <span class="n">the</span> <span class="n">first</span> <span class="n">few</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span>
+<span class="n">tail</span>	<span class="n">show</span> <span class="n">the</span> <span class="n">last</span> <span class="n">few</span> <span class="n">lines</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span>
+<span class="n">cat</span> 	<span class="nb">print</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">file</span> <span class="n">to</span> <span class="n">the</span> <span class="n">screen</span>
+<span class="n">grep</span>	<span class="n">search</span><span class="p">,</span> <span class="n">the</span> <span class="o">-</span><span class="n">c</span> <span class="n">flag</span> <span class="n">counts</span> <span class="n">the</span> <span class="n">matches</span>
+</pre></div>
+</div>
+</section>
+<section id="quiz-2-googling-is-ok">
+<h2>Quiz 2 (Googling is OK)<a class="headerlink" href="#quiz-2-googling-is-ok" title="Permalink to this headline">#</a></h2>
+<p>How many lines does <code class="docutils literal notranslate"><span class="pre">head</span></code> display? How can that be changed? Show me</p>
+<p>Now write a <code class="docutils literal notranslate"><span class="pre">grep</span></code> search with the correct syntax to find “Nematoda” in <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code>. How many times does it occur?</p>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">grep</span></code> search to find the DNA sequence “GCCATGCG” in <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code>. Why does it print out so much DNA sequence? How many times does GCCATGCG occur?</p>
+<HR>
+PAUSE HERE AND CHECK BEFORE GOING FURTHER
+<HR></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="wildcards">
+<h1>4 Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this headline">#</a></h1>
+<p>We have learned about displaying files and basic searches. Later you will create and move information into files. We need more detailed control however, not just displaying one named file, or all files, but instead the files we have specifically chosen. Wildcards allow us to select text and file names in a powerful and flexible way that makes life much easier.</p>
+<section id="what-are-wildcards">
+<h2>4.1 What are wildcards?<a class="headerlink" href="#what-are-wildcards" title="Permalink to this headline">#</a></h2>
+<p>Wildcards represent characters, and allow you to create a search term to select files or directories.</p>
+<p>They allow selections to be both very broad (by having a general matching criteria, eg all file names beginning with a letter) and very specific (by having very detailed matching criteria, eg all files with <code class="docutils literal notranslate"><span class="pre">f</span></code> as the second letter and a number between 1 and 5 at the end).</p>
+<p><strong>Here is the basic set of wildcards:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> - represents any character ocurring zero or more times (nothing or everything). eg <code class="docutils literal notranslate"><span class="pre">f*</span></code> represents the letter <code class="docutils literal notranslate"><span class="pre">f</span></code> followed by any number of characters whatever they are. So files <code class="docutils literal notranslate"><span class="pre">fez.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">f1234.jpg</span></code> and <code class="docutils literal notranslate"><span class="pre">fibonacci.mpeg</span></code> would all match, as would a file just called <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">?</span></code> - represents any single character. eg <code class="docutils literal notranslate"><span class="pre">d?g</span></code> would match dog, dig, or d8g, but not doog</p>
+<p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> - represents a specified range of single characters. eg <code class="docutils literal notranslate"><span class="pre">d[a-n]g</span></code> would match dag, dbg, dcg etc but not dog because the letter o is not in the set a-n</p>
+<p>The most useful for you today will be the star (*) wildcard. Like all wildcards * helps to create a pattern (series of characters) and that pattern is used by the program to define what it does.</p>
+</section>
+<section id="listing-using-wildcards">
+<h2>4.2 Listing using wildcards<a class="headerlink" href="#listing-using-wildcards" title="Permalink to this headline">#</a></h2>
+<p>Previously <code class="docutils literal notranslate"><span class="pre">ls</span></code> has been used to display all files in a directory, but now lets select only certain files. In the world of big data there may be thousands of files of different file types, or with different metadata included in the file name. Selecting only the files meeting certain criteria is very useful. Later you will learn how to use these selected files, and only those selected.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> lists the contents of the working directory</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">data</span></code> lists the contents of the data directory</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">data/my_sequences/sequence1.fas</span></code> will list the specified file (sequence1.fas)</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">data/my_sequences/*.fas</span></code> will list all files whose names are any number of any characters followed by “.fas”. So the files <code class="docutils literal notranslate"><span class="pre">sequence1.fas</span></code>, <code class="docutils literal notranslate"><span class="pre">shortseqs.fas</span></code>, <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code>, but not <code class="docutils literal notranslate"><span class="pre">C.09.F.fasta</span></code> will match the pattern created by the * wildcard (*.fas).</p>
+<p>Try this wildcard search for yourself</p>
+<p>If you are getting <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code> errors please check that you are in the main folder, above data</p>
+</section>
+<section id="quiz-3">
+<h2>Quiz 3<a class="headerlink" href="#quiz-3" title="Permalink to this headline">#</a></h2>
+<p>With your partner write a command to list each of the following in any directory (you do not actually need these files to exist, just write a <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to do the job):</p>
+<ol class="simple">
+<li><p>write a <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to display all the .txt files</p></li>
+<li><p>write a <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to display all the .jpeg files</p></li>
+<li><p>write a <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to display all the files named 1234 whatever file extension they have (.jpeg, .txt, .fas)</p></li>
+</ol>
+<ol class="simple">
+<li><p>How would you list only the fasta files beginning with “sequence” and not “Dave” or anything else? As a complication, one user has put sequence files with a <code class="docutils literal notranslate"><span class="pre">.fas</span></code> suffix, another with <code class="docutils literal notranslate"><span class="pre">.fasta</span></code>, and a third with <code class="docutils literal notranslate"><span class="pre">.fa</span></code>. This is bad naming practice, but we need all the fasta files. What wildcard command would list them out? Discuss this with a demonstrator</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="unix-commands-are-case-sensitive">
+<h2>4.3 unix commands are case sensitive<a class="headerlink" href="#unix-commands-are-case-sensitive" title="Permalink to this headline">#</a></h2>
+<p>Most commands at the terminal are case sensitive, so <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">Dave.*</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">dave.*</span></code> will produce different results.
+This is a common error you should watch out for. There are ways to make commands <strong>case insensitive</strong> (so <code class="docutils literal notranslate"><span class="pre">Dave.fas</span></code> and <code class="docutils literal notranslate"><span class="pre">dave.fas</span></code> are treated the same) but it is not the default behaviour of command line programs.</p>
+</section>
+<section id="file-filtering-and-copying">
+<h2>4.4 file filtering and copying<a class="headerlink" href="#file-filtering-and-copying" title="Permalink to this headline">#</a></h2>
+<p>Your wildcard skills can be deployed in lots of situations, they are not specific to <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
+<p>It is actually the underlying bash kernel (the program that runs the command line terminal) that does the hard work. It translates your wildcard pattern (<code class="docutils literal notranslate"><span class="pre">sequence*.fas</span></code>) into a list of files that match (eg <code class="docutils literal notranslate"><span class="pre">sequence1.fas</span></code> … <code class="docutils literal notranslate"><span class="pre">sequence100.fas</span></code>) and feeds those to the <code class="docutils literal notranslate"><span class="pre">ls</span></code> program.</p>
+<p>The good news is that it does this for every program not just <code class="docutils literal notranslate"><span class="pre">ls</span></code> so your new wildcard skills can be used anywhere. Next you will use these skills to select files (based on the metadata in their filenames) and copy them to a new location.</p>
+<p>The command to copy a file is <code class="docutils literal notranslate"><span class="pre">cp</span></code>. Google it if you need. You can use <code class="docutils literal notranslate"><span class="pre">cp</span></code> in the same way as you used <code class="docutils literal notranslate"><span class="pre">ls</span></code>, incorporating wildcards to copy only certain files just as you have been doing already.</p>
+<p>Copy commands are structured like this (just an example, don’t copy and paste it):</p>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">directory1/selected_files</span> <span class="pre">directory2/</span></code></p>
+<p>You will have to supply three terms and assemble them correctly:</p>
+<ol class="simple">
+<li><p>“directory1” refers to where the files are</p></li>
+<li><p>“directory2” refers to where you will copy them</p></li>
+<li><p>“selected_files” term is your wildcard search for fasta files containing “sequence”. You probably already wrote something similar above (Quiz 3.4).</p></li>
+</ol>
+<p><strong>Copy all the fasta files in the <code class="docutils literal notranslate"><span class="pre">data/sequences</span></code> directory that contain the word “sequence” and copy them to the <code class="docutils literal notranslate"><span class="pre">data/seqs_filtered</span></code> directory</strong></p>
+<p>Check what files are present in this directory before and after the copy. Have you copied what you intended? If not a demonstrator can help you to delete the files, and you can try again.</p>
+</section>
+<hr class="docutils" />
+<section id="wildcards-optional-extras">
+<h2>4.5 Wildcards, optional extras<a class="headerlink" href="#wildcards-optional-extras" title="Permalink to this headline">#</a></h2>
+<p><strong>This section can be skipped over if you are pushed for time</strong> just go to section 5, but it provides details of other types of wildcard beyond the asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code>. These are higher level skills. The more complex your search, the more you will have to use a full range of wildcards. You can read and see examples by Googling unix wildcards</p>
+<section id="the-wildcard">
+<h3>4.5.1 the <code class="docutils literal notranslate"><span class="pre">?</span></code> wildcard<a class="headerlink" href="#the-wildcard" title="Permalink to this headline">#</a></h3>
+<p>As a brief example let’s introduce the <code class="docutils literal notranslate"><span class="pre">?</span></code> wildcard.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">?i*</span></code></p>
+<p>In this example we are looking for each file whose second letter is “i” because our term translates as “list filenames with any single character, followed by the letter ‘i’, followed by any number of characters”. As you can guess, the pattern can be built up using several wildcards.</p>
+<p>How would you find  every file with a three letter extension?</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">*.???</span></code></p>
+<p>This is “any number of characters, followed by a dot, followed by 3 single characters but not more or less”</p>
+</section>
+<section id="the-range-operator-wildcard">
+<h3>4.5.2 the range operator (<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>) wildcard<a class="headerlink" href="#the-range-operator-wildcard" title="Permalink to this headline">#</a></h3>
+<p>The range operator (<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>), unlike the previous 2 wildcards which specified any character, allows you to limit to a subset of characters.</p>
+<p>In this example we are looking for every file whose name either begins with an s or v.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">[sv]*</span></code></p>
+<p>And here any .fas file beginning with an s or d</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">data/[sd]*.fas</span></code></p>
+<p>With ranges we may also include a set by using a hyphen. So for example if we wanted to find every file whose name includes a digit we could do the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">*[0-9]*</span></code></p>
+<p>To find all the numerically labelled fasta files (sequence1.fas, sequence100.fas) in our directory we could try this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">seq*[0-9].fas</span></code></p>
+</section>
+</section>
+<section id="id2">
+<h2>Summary<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls	list contents of the directory
+cp	copy
+*	wildcard, stands for &#39;any characters&#39;
+?	wildcard, stands for a &#39;single character&#39;
+[]	wildcard, specifies a range of characters
+</pre></div>
+</div>
+<HR>
+PAUSE HERE AND CHECK BEFORE GOING FURTHER
+<HR></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="search-replace-and-write-output-to-a-new-file">
+<h1>5 Search, replace, and write output to a new file<a class="headerlink" href="#search-replace-and-write-output-to-a-new-file" title="Permalink to this headline">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is an excellent tool for undertaking simple yet fast searches within text files. But to search and replace within a text file, or to redirect changes to a new file, we will need to use either <code class="docutils literal notranslate"><span class="pre">sed</span></code> or a simple script (OK there are actually numerous ways of doing this utilizing other tools and python scripts but this manual will only deal with simple examples with <code class="docutils literal notranslate"><span class="pre">sed</span></code>). First though we will write text using <code class="docutils literal notranslate"><span class="pre">echo</span></code> and learn about routing data to the right location with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.</p>
+<section id="echo-to-write-data">
+<h2>5.1 <code class="docutils literal notranslate"><span class="pre">echo</span></code> to write data<a class="headerlink" href="#echo-to-write-data" title="Permalink to this headline">#</a></h2>
+<p>A useful way to write to a text file is with <code class="docutils literal notranslate"><span class="pre">echo</span></code>. This will print to the screen or a file.
+Try these commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo Hello world!
+$ echo Hello world! &gt; greeting.txt
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">Hello</span> <span class="n">world</span><span class="o">!</span><span class="w"> </span>&gt;<span class="w"> </span>greeting.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>It may not seem like this second command has done anything, but it has. You have used the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to route the output to a file (<code class="docutils literal notranslate"><span class="pre">greeting.txt</span></code>) rather than to the screen.</p>
+</section>
+<section id="routing-determine-where-your-data-goes">
+<h2>5.2 routing, determine where your data goes<a class="headerlink" href="#routing-determine-where-your-data-goes" title="Permalink to this headline">#</a></h2>
+<p>If the file <code class="docutils literal notranslate"><span class="pre">greeting.txt</span></code> does not exist it will be created. We have routed the information to a location (the file) with the greater than (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) symbol. If the file does exist it will be overwritten. Keep this in mind when dealing with important data, the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> will overwrite all previous data in the file.</p>
+<p>Check the file now exists (how?), then you can use one of the commands above (<code class="docutils literal notranslate"><span class="pre">cat</span></code> maybe? Do you remember the others?) to inspect the file you have just created.</p>
+<p>If you wish to <strong>append</strong> text to a file rather than <strong>replace</strong> it you can use the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> symbol:</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">‘Hello</span> <span class="pre">again</span> <span class="pre">world!’</span> <span class="pre">&gt;&gt;</span> <span class="pre">greeting.txt</span></code></p>
+<p>Try this and check your success.</p>
+<p><strong>Routing syntax</strong> (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) is general to UNIX and can be used with other programs too. Imagine that you need to add an extra fasta sequence to the end of a big sequence file, the append symbol <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> will be helpful. In reality you would want to take your new text from a file rather than typing it it. We have similar examples in the <code class="docutils literal notranslate"><span class="pre">sed</span></code> section below where the source file is specified using a less than (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>) symbol.</p>
+</section>
+<hr class="docutils" />
+<section id="quiz-3-concatenation">
+<h2>Quiz 3 Concatenation<a class="headerlink" href="#quiz-3-concatenation" title="Permalink to this headline">#</a></h2>
+<p><strong>Background thought experiment, discuss</strong></p>
+<p>Describe to your partner how, using MS Word, you would open a directory of 3 fasta files and copy the contents of each file into a new “all_seqs.fas” file and estimate how quickly you could do this.</p>
+<p>Now describe how you would do that in Word with 3000 fasta files, or 3,000,000 files and estimate how long it would take. At the command line these solutions (3; 3,000; 3,000,000) are identical and the same amount of work for you!</p>
+<p>A common bioinformatics task is to <strong>concatenate</strong> a lot of individual sequence files into one single file as described above. This is very time consuming to do in a GUI if you have more than a couple of files to open, copy, close, open, paste. The task at the command line however scales easily to almost any number of files.</p>
+<p><strong>Now come up with a solution</strong></p>
+<p>You already have all the skills to do this if you learned about wildcards and routing before. Don’t worry if not, discuss it and ask for help. It is most important that you know that the command line <em>scales</em>. Your cammand that you write here will be <em>exactly</em> the same if you concatenate 3 or 3,000,000 fasta files. If you can work out how to do this, and get the syntax correct, show a demonstrator or myself.</p>
+<p><strong>Try these 3 tasks:</strong></p>
+<p>Go to the <code class="docutils literal notranslate"><span class="pre">fasta-to-combine</span></code> directory.</p>
+<p>Concatenate all 10 sequence files into a new file with an informative name.</p>
+<p>Can you do the same excluding the contents of the <a class="reference external" href="http://README.md">README.md</a> file? Demonstrate your success (show me) by inserting cells below</p>
+<HR>
+<p><strong>The next sections below, and section 6, are starting to build really powerful and useful bioinformatics skills to manipulate data. Don’t get overwhelmed trying to remember alll the syntax, you can just scroll back to look it up, or google it. Instead for each section try to think of real-world uses- “I’ve just collected a lot of data in a lot of files, how could this help me to wrangle it?”</strong></p>
+<p><strong>If you need it take a break, or chat to one of us about the work, but don’t just skip ahead</strong></p>
+<HR></section>
+<section id="optional-stucturing-data-files-with-echo">
+<h2>5.3 (Optional) stucturing data files with <code class="docutils literal notranslate"><span class="pre">echo</span></code><a class="headerlink" href="#optional-stucturing-data-files-with-echo" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span></code> also allows us to format files correctly. If we need newlines or tabs inserted we can do this by using the <code class="docutils literal notranslate"><span class="pre">-e</span></code> flag. The tab symbol is <code class="docutils literal notranslate"><span class="pre">\t</span></code> and newline <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
+<p>Can you use these to better format the file “greeting.txt” that you created before in the “routing, determine where your data goes” section above?</p>
+<p>Try to imagine what the following command will write, maybe sketch it out &amp; discuss with others:</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">-e</span> <span class="pre">“column1\tcolumn2\nRNA\tDNA”</span> <span class="pre">&gt;</span> <span class="pre">rna-dna-columns.txt</span></code></p>
+<p>Give it a go and check what has been written. These commands are useful when writing a lot of data to a file programmatically, and when format is important, which is a very common situation for bioinformatics work.</p>
+<section id="echo-and-file-names">
+<h3><code class="docutils literal notranslate"><span class="pre">echo</span></code> and file names<a class="headerlink" href="#echo-and-file-names" title="Permalink to this headline">#</a></h3>
+<p>Something that is often useful when working with lots of files, as bioinformaticians do, is to know that <code class="docutils literal notranslate"><span class="pre">echo</span></code> can write file information like file names</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">*.fas</span> <span class="pre">&gt;</span> <span class="pre">fasta-file-names.txt</span></code></p>
+<p>This would write the name of every file in the current directory with a <code class="docutils literal notranslate"><span class="pre">.fas</span></code> extension to a file called <code class="docutils literal notranslate"><span class="pre">fasta-file-names.txt</span></code>.</p>
+<p>This could be very useful when you need process lots of information about output file, perhaps when the file names contain information like sample location, or organism, or date. Although I am talking only about bioinformatics today, big data is everywhere in biology. You can manipulate files of any type of data using your new skills.</p>
+</section>
+</section>
+<section id="sed-the-stream-editor">
+<h2>5.4 <code class="docutils literal notranslate"><span class="pre">sed</span></code>, the stream editor<a class="headerlink" href="#sed-the-stream-editor" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sed</span></code> works best when we need to deal with files as single lines, or rows of text data. Since <code class="docutils literal notranslate"><span class="pre">sed</span></code> doesn’t try to take the whole file into memory, instead dealing with a line at a time, it has real advantages when files are enormous- as they often are for sequence data.
+To search for and replace <code class="docutils literal notranslate"><span class="pre">Fungi</span></code> with <code class="docutils literal notranslate"><span class="pre">Fungus</span></code> in our <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code> file we could do the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">'s/Fungi/Fungus/'</span> <span class="pre">&lt;</span> <span class="pre">18S_seqs.fas</span> <span class="pre">&gt;</span> <span class="pre">fungi-to-fungus.fas</span></code></p>
+<p>This will replace the single word Fungi with the word Fungus, but output these changes to the file <code class="docutils literal notranslate"><span class="pre">fungi-to-fungus.fas</span></code>, leaving the original file unchanged. It is always good practice to leave the original data unchanged when modifying it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">s</span></code> within the single quotes signifies this is a substitution command and the <code class="docutils literal notranslate"><span class="pre">/</span></code> characters are delimiters that separate the text to search for, and the text to replace it with.</p>
+<p>In UNIX based systems the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> signifies an input, so we are taking input from our <code class="docutils literal notranslate"><span class="pre">18S_seqs.fas</span></code> file and outputting (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) to <code class="docutils literal notranslate"><span class="pre">fungi-to-fungus.fas</span></code></p>
+</section>
+<section id="id3">
+<h2>Summary<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span>	<span class="n">write</span> <span class="n">to</span> <span class="n">a</span> <span class="n">file</span>
+<span class="n">sed</span>	<span class="n">search</span> <span class="ow">and</span> <span class="n">replace</span>
+<span class="o">&lt;</span>	<span class="n">take</span> <span class="nb">input</span> <span class="kn">from</span> <span class="nn">named</span> <span class="n">file</span>
+<span class="o">&gt;</span>	<span class="n">direct</span> <span class="n">output</span> <span class="n">to</span> <span class="n">named</span> <span class="n">file</span><span class="p">,</span> <span class="n">replacing</span>
+<span class="o">&gt;&gt;</span>	<span class="n">direct</span> <span class="n">output</span> <span class="n">to</span> <span class="n">named</span> <span class="n">file</span><span class="p">,</span> <span class="n">appending</span>
+<span class="o">*</span>	<span class="n">wildcard</span><span class="p">,</span> <span class="n">stands</span> <span class="k">for</span> <span class="s1">&#39;any characters&#39;</span>
+</pre></div>
+</div>
+<p>Test yourselves. In pairs ask each other to explain what items from the list above do. Each of you ask the other to come up with a (not too difficult) command line using one or two of them.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="sorting-and-filtering-lists">
+<h1>6 Sorting and filtering lists<a class="headerlink" href="#sorting-and-filtering-lists" title="Permalink to this headline">#</a></h1>
+<p>Not all files of data are convenient to look at. Sometimes there is too much data and it is not structured for the human brain. In these cases it is very useful to filter, sort, count the instances of each record, and write bespoke lists.</p>
+<p>You have already learned some filtering by searching for key phrases with <code class="docutils literal notranslate"><span class="pre">grep</span></code>, using wildcards, and routing data to new files. You are now going to learn to sort and combine identical records and count them.</p>
+<section id="counting-characters-words-and-lines">
+<h2>6.1 counting characters, words, and lines<a class="headerlink" href="#counting-characters-words-and-lines" title="Permalink to this headline">#</a></h2>
+<p>unix has a word count program called <code class="docutils literal notranslate"><span class="pre">wc</span></code></p>
+<p>There are many ways to use this but useful options are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">m</span> <span class="n">count</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">characters</span>
+<span class="o">-</span><span class="n">w</span> <span class="n">count</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">words</span>
+<span class="o">-</span><span class="n">l</span> <span class="n">count</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">lines</span>
+
+</pre></div>
+</div>
+<p>Of course wc, like other programs because more powerful when part of a workflow linked by pipes |. Can you determine what this cammand would do?</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">*.csv</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p>
+<p>Try to word count the number of lines in some files in <code class="docutils literal notranslate"><span class="pre">data/my_sequences</span></code></p>
+</section>
+<section id="sort-uniq">
+<h2>6.2 sort uniq<a class="headerlink" href="#sort-uniq" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> command rearranges the lines of a file into alphabetical and numerical order, which can be very useful.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">uniq</span></code> command is a way of filtering out repeated lines in a file. It operates by comparing adjacent lines and determining if they are the same. This strategy requires the file to be sorted first, so <code class="docutils literal notranslate"><span class="pre">sort</span></code> and <code class="docutils literal notranslate"><span class="pre">uniq</span></code> are often employed together. The output of <code class="docutils literal notranslate"><span class="pre">uniq</span></code> are the non-redundant (ie unique, occuring once) lines of a file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> can report the number of times a line occurred by using the <code class="docutils literal notranslate"><span class="pre">-c</span></code> flag. It prepends the number of occurrances to the line. We could do something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sort</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">uniq</span> <span class="o">-</span><span class="n">c</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">head</span> <span class="o">-</span><span class="mi">4</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="mi">7</span> <span class="n">apples</span>
+<span class="mi">2</span> <span class="n">bananas</span>
+<span class="mi">1</span> <span class="n">cherries</span>
+<span class="mi">1</span> <span class="n">durian</span>
+</pre></div>
+</div>
+<p>It might be better however to link the commands together with pipes, each action passing its results to the next. Doing so would reduce typing and errors.</p>
+<p>Try to sort and count the fruit in <code class="docutils literal notranslate"><span class="pre">data/fruit.txt</span></code> using pipes and no pipes. Next display the top three Next write the top three to a <code class="docutils literal notranslate"><span class="pre">fruit_top3.txt</span></code> file using the greater than symbol.</p>
+</section>
+<section id="id4">
+<h2>Summary<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>wc	word count, `-m` characters, `-w` words, `-l` lines
+sort	rearrange into alphabetical or numerical order
+uniq	remove duplicate lines
+|	pipe, used to chain together commands (see below)
+</pre></div>
+</div>
+<HR>
+PAUSE HERE AND CHECK BEFORE GOING FURTHER
+<HR></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="competency-part-c-cancer-associated-gene-lists">
+<h1>Competency part C: cancer associated gene lists<a class="headerlink" href="#competency-part-c-cancer-associated-gene-lists" title="Permalink to this headline">#</a></h1>
+<p>This final piece of work is by far the most challenging. Remember though, that everything I am asking you to do you have pretty much already just done above in section 6. You may discuss and exchange ideas with others in the class. Google it if you wish! But you must learn enough to carry it out yourself. Do not give up, this sounds harder than it is, you have made great progress up until here!</p>
+<p>Unlike the other competencies this is a complete section and you must do all 5 parts in bold labeled C3.1 - C3.5</p>
+<section id="differential-expression-of-genes-in-cancer-tissue">
+<h2>Differential expression of genes in cancer tissue<a class="headerlink" href="#differential-expression-of-genes-in-cancer-tissue" title="Permalink to this headline">#</a></h2>
+<p>Dr Smith is studying which genes are overexpressed in different cancers. She designs a small pilot project before launching into her main research in order to get candidate genes that she will focus on later.</p>
+<ol class="simple">
+<li><p>take cancerous tissues samples from both lung and heart</p></li>
+<li><p>convert mRNA to cDNA and sequence</p></li>
+<li><p>identify the gene name for each DNA sequence</p></li>
+<li><p>organise the gene name data into heart and lung collections</p></li>
+<li><p>count and compare the unique gene names in both tissues</p></li>
+</ol>
+<p>Steps 1-3 have been completed for you. It is now time for the bioinformaticians to get to work. You will now carry out steps 4 and 5 by completing the whole of this section.</p>
+</section>
+<section id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
+<p>You have been provided with a file called <code class="docutils literal notranslate"><span class="pre">data/genes/genelist.txt</span></code>. This contains the name of each gene found, with a suffix indicating in what tissue the mRNA originated.</p>
+<p><strong>C3.1 Examine the list using your file-reading skills</strong></p>
+<p><strong>C3.2 determine how many records it contains</strong></p>
+</section>
+<section id="organising-the-data-into-files">
+<h2>Organising the data into files<a class="headerlink" href="#organising-the-data-into-files" title="Permalink to this headline">#</a></h2>
+<p>You will need to separate the two classes of records (heart, lung) into two separate files in order to work with them easily. You have previously done something similar with <code class="docutils literal notranslate"><span class="pre">grep</span></code>. You should use carefully chosen file names so that it is clear what is in each. A common error would be to analyse the wrong file because it has a similar name.</p>
+<p><strong>C3.3 Create and run a search term to separate the two types of gene names and write them into separate well-named files</strong></p>
+<p>You should check both files to confirm there is only one type of tisue data, and count the number of records in each as you did before</p>
+</section>
+<section id="sorting-and-counting-gene-names">
+<h2>Sorting and counting gene names<a class="headerlink" href="#sorting-and-counting-gene-names" title="Permalink to this headline">#</a></h2>
+<p>For each file you are are first going to determine the number of times each gene name occurs. That is how many unique records exist. You have already combined <code class="docutils literal notranslate"><span class="pre">sort</span></code> and <code class="docutils literal notranslate"><span class="pre">uniq</span></code>. You should remember how to write data to a file, and have used this with several programs already. A challenging aspect here are determining how many times you will need to sort. Also (although its not necessary if you have a good plan) many people will want to have the most frequently expressed genes at the top of the file. You may need to look up <code class="docutils literal notranslate"><span class="pre">sort</span></code> flags to do this.</p>
+<p><strong>C3.4 create two files (ie both heart and lung), each containing a sorted list of all the unique gene names, with the gene-name frequency counts next to them</strong></p>
+<p><strong>C3.5 Write the lines containing the most frequent 5 gene names from each tissue to a file</strong></p>
+<p>You have almost finishd, well done, please ask a demonstrator for a high five.</p>
+<p>Now you can upload a PDF of this workbook to complete your assessment. Read section 7 below.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="this-is-really-important-don-t-skip-section-7">
+<h1>THIS IS REALLY IMPORTANT DON’T SKIP SECTION 7<a class="headerlink" href="#this-is-really-important-don-t-skip-section-7" title="Permalink to this headline">#</a></h1>
+<hr class="docutils" />
+<section id="uploading-your-competency-work">
+<h2>7. Uploading your competency work<a class="headerlink" href="#uploading-your-competency-work" title="Permalink to this headline">#</a></h2>
+<p><strong>You must save and upload your practical notebook as a PDF</strong></p>
+<ol class="simple">
+<li><p>Check your name and student ID are in the cell at the top of this notebook.</p></li>
+<li><p>Use the internet browser menu to <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">as</span> <span class="pre">PDF</span></code></p></li>
+<li><p>Save this PDF somewhere safe. You should rename it informatively (Bloggs_unixprac.pdf, 978675_commandline.pdf).</p></li>
+<li><p>Validate your work. Check how many pages it has and <strong>if it is &gt;20 pages you have done something wrong, probably by using <code class="docutils literal notranslate"><span class="pre">cat</span></code> on a very large file</strong>. Do not submit, go back and have another try. Now upload it to the Canvas assignment for “Week C unix competency”</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="you-are-now-completely-finished-well-done">
+<h1>YOU ARE NOW COMPLETELY FINISHED, WELL DONE<a class="headerlink" href="#you-are-now-completely-finished-well-done" title="Permalink to this headline">#</a></h1>
+<p>You have achieved A LOT today. The skills you have learned are very valuable in biology and any area of science. Remember you don’t have to have memorised all this, you can look up the syntax whenever you need it. In bioinformatics its not cheating to look things up (or Google it) whenever you need to use them, its encouraged.</p>
+<p>What I do want you to take away are:</p>
+<ol class="simple">
+<li><p>a knowledge of the sorts of things you know how to do: search by criteria, list, count, sort, find uniques, and write to files. I would like you to recognise problems you can solve, and feel confident to write or loook up the syntax to solve them.</p></li>
+<li><p>know that all your skills scale: a single command that searched, sorted, and counted unique data in 1 file will do the same in 1000 files just by changing the input term. I would like you to feel confident that big data is something you can deal with.</p></li>
+</ol>
+<p>You can now check with someone and go.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="appendix-1-the-fasta-file-format">
+<h1>Appendix 1 the fasta file format<a class="headerlink" href="#appendix-1-the-fasta-file-format" title="Permalink to this headline">#</a></h1>
+<p>Fasta (pronounced “fast- ay” to rhyme with May) is a concise standard text file format used for sequence data. A fasta file may contain one or many separate sequence records, each in fasta format. You will need to use this format several times during today’s session. Both DNA and amino acid sequences can be formatted this way. Essentially it is a greater than symbol “&gt;” followed by any title you want to give it, then, starting on the next line, the sequence.</p>
+<section id="here-is-the-description-of-fasta-from-genbank">
+<h2>Here is the description of FASTA from GenBank.<a class="headerlink" href="#here-is-the-description-of-fasta-from-genbank" title="Permalink to this headline">#</a></h2>
+<p>“A sequence in FASTA format begins with a single-line description, followed by lines of sequence data. The description line is distinguished from the sequence data by a greater-than (“&gt;”) symbol in the first column”</p>
+<p>Example sequences in FASTA format are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">AAH22472</span><span class="mf">.1</span> <span class="n">Malic</span> <span class="n">enzyme</span> <span class="mi">3</span><span class="p">,</span> <span class="n">NADP</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="o">-</span><span class="n">dependent</span><span class="p">,</span> <span class="n">mitochondrial</span> <span class="p">[</span><span class="n">Homo</span> <span class="n">sapiens</span><span class="p">]</span>
+<span class="n">MGAALGTGTRLAPWPGRACGALPRWTPTAPAQGCHSKPGPARPVPLKKRGYDVTRNPHLNKGMAFTLEER</span>
+<span class="n">LQLGIHGLIPPCFLGQDVQLLRIMGYYERQQSDLDKYIILMTLQDRNEKLFYRVLTSDVEKFMPIVYTPT</span>
+<span class="n">VGLACQHYGLTFRRPRGLFITIHDKGHLATMLNSWPEDNIKAVVVTDGERILGLGDLGCYGMGIPVGKLA</span>
+<span class="n">LYTACGGVNPQQCLPVLLDVGTNNEELLRDPLYIGLKHQRVHGKAYDDLLDEFMQAVTDKFGINCLIQFE</span>
+
+<span class="o">&gt;</span><span class="n">My</span> <span class="n">sequence</span>
+<span class="n">CCGGGCTCTGCCTCGATGCAAACGTTATGCATATATGTATTATCACCATTATTTTATATCAAACATATCC</span>
+<span class="n">TATATATTAATACATCTCATTTAACAGAAATATAGGTAGATATACCACATATTTGTCAACAACATTTTAA</span>
+<span class="n">CTAAGGGGTACATAAACCATAACTAAGTACTCTCCAATAAATATTTATTAATTACTGAACGATAGTTTAA</span>
+<span class="n">GACCGATCACAACTCTCACTGGTTAAGATATACCAAGTACCCACCATCCTATTTACCTCCCTTATTTAAT</span>
+<span class="n">GTAGTAAGAGCCCACCATCAGTTGATTTCTTAATGTTAACGGTTCTTGAAGGTCAAGGACAAATATTCGT</span>
+<span class="n">GGGGGTTTCACTTAGTGAACTATTCCTGGCATCTGGTTCCTATTTCAGGTCCAATAATTGTTATAATTCC</span>
+<span class="n">CCATACTTTCATCGACGCTTGCATAAGTTAATGGTGGTAATACATACTCCTCGTTACCCACCATGCCGGG</span>
+<span class="n">CGTTCTTTCCAGCGTGTGGGGGGTTCTCTTTTTTTTTNNCCTTTCA</span>
+</pre></div>
+</div>
+</section>
+<section id="fasta-format-records-and-fasta-files">
+<h2>Fasta format records and fasta files<a class="headerlink" href="#fasta-format-records-and-fasta-files" title="Permalink to this headline">#</a></h2>
+<p>Above are two fasta records. A fasta record contains only a single header with a single sequence. It is one thing. The record is in fasta format because it is a greater than symbol, then a header, then the sequence.</p>
+<p>A fasta file is a text file. It usually has the extension .fas or .fsa or .fna or .fasta. Each text file may contain one or more than one fasta record. It is not uncommon to have tens of thousands of fasta records in a single text file. For it to count as a fasta file all the records must be in valid fasta format.</p>
+</section>
+<section id="appendix-2">
+<h2>Appendix 2<a class="headerlink" href="#appendix-2" title="Permalink to this headline">#</a></h2>
+<section id="some-reading-if-you-wish-to-extend-your-knowledge">
+<h3>Some reading if you wish to extend your knowledge<a class="headerlink" href="#some-reading-if-you-wish-to-extend-your-knowledge" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>UNIX Tutorial for Beginners <a class="reference external" href="http://www.ee.surrey.ac.uk/Teaching/Unix/">http://www.ee.surrey.ac.uk/Teaching/Unix/</a></p></li>
+<li><p>Command line history tricks <a class="reference external" href="http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/">http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/</a></p></li>
+<li><p>Software Carpentry Introduction to the unix shell on YouTube (great short videos)</p></li>
+<li><p>Unix and Perl Primer for Biologists <a class="reference external" href="http://korflab.ucdavis.edu/Unix_and_Perl/unix_and_perl_v3.0.pdf">http://korflab.ucdavis.edu/Unix_and_Perl/unix_and_perl_v3.0.pdf</a></p></li>
+<li><p>Bradnam and Korf. (2012) UNIX and Perl to the Rescue!: A Field Guide for the Life Sciences (and Other Data-rich Pursuits). ISBN-10: 0521169828  ISBN-13: 978-0521169820 <a class="reference external" href="http://www.amazon.co.uk/gp/product/0521169828">http://www.amazon.co.uk/gp/product/0521169828</a></p></li>
+<li><p>GREP <a class="reference external" href="http://www.gnu.org/software/grep/manual/grep.html">http://www.gnu.org/software/grep/manual/grep.html</a></p></li>
+<li><p>SED <a class="reference external" href="http://www.gnu.org/software/sed/manual/sed.html">http://www.gnu.org/software/sed/manual/sed.html</a></p></li>
+<li><p>Software Carpentry Introduction to programming in Python (great short YouTube videos)</p></li>
+<li><p>Python for Biologists <a class="reference external" href="http://pythonforbiologists.com">http://pythonforbiologists.com</a></p></li>
+<li><p>Python for non-programmers <a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">https://wiki.python.org/moin/BeginnersGuide/NonProgrammers</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./weekC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="weekC_manual.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week C manual</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2.sequence_QC.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analysis and Quality Control of Sequence Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dave Lunt et al<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
