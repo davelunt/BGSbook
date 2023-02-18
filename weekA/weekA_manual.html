@@ -1,0 +1,1885 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview of Week A &#8212; BGS course book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/fibrobacter.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BGS course book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Bacterial Genome Sequencing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/facilities.html">
+   Facilities and Equipment for the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/index.html">
+   BGS course manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week A microbiology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="microbiology.html">
+   Week A Microbiology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week B sequencing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/weekB_manual.html">
+   Week B manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week C assembly
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/weekC_manual.html">
+   Week C manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week D annotation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/weekD_manual.html">
+   Week D manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week E antibiotics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekE/antibiotics.html">
+   Week E: Student-led experiments
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FweekA/weekA_manual.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/weekA/weekA_manual.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-of-week-a">
+   Goals of Week A
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-and-study">
+   Learning and Study
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessed-portfolio-activities">
+   Assessed Portfolio Activities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electronic-lab-notebook">
+     Electronic Lab Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-portfolio">
+     Competency Portfolio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bacterial-identification">
+   Bacterial Identification
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plating-out-bacteria">
+     Plating out bacteria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gram-staining">
+     Gram Staining
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-1-differences-in-cell-wall-structure-in-gram-positive-and-gram-negative-bacteria">
+       Figure 1. Differences in cell wall structure in Gram-positive and Gram-negative bacteria.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-2-differential-staining-of-gram-positive-and-gram-negative-bacteria-using-the-gram-stain-procedure">
+       Figure 2. Differential staining of Gram-positive and Gram-negative bacteria using the Gram stain procedure.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-4-examples-of-common-morphologies-of-bacterial-cells-viewed-using-a-light-microscope">
+       Figure 4. Examples of common morphologies of bacterial cells viewed using a light microscope.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gram-stain-practical-instructions">
+     Gram Stain: Practical Instructions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-microscope">
+     Using the Microscope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#focus-the-specimen">
+     Focus the specimen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bacterial-dna-extraction">
+   Bacterial DNA Extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cell-lysis">
+     Cell Lysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inhibitor-removal">
+     Inhibitor Removal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dna-extraction-assessment">
+   DNA Extraction Assessment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#length-estimation">
+     Length Estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantity-of-dna">
+     Quantity of DNA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-of-dna">
+     Quality of DNA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dna-extraction">
+   DNA extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-starting">
+     BEFORE STARTING
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lysis">
+     Lysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Inhibitor removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spri-dna-binding">
+     SPRI DNA binding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wash">
+     Wash
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elution">
+     Elution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessment-of-dna-extraction">
+   Assessment of DNA extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gel-electrophoresis">
+     Gel Electrophoresis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qubit-quantification">
+     Qubit Quantification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nanodrop-quality-assessment">
+     Nanodrop Quality Assessment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Overview of Week A</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-of-week-a">
+   Goals of Week A
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-and-study">
+   Learning and Study
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessed-portfolio-activities">
+   Assessed Portfolio Activities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#electronic-lab-notebook">
+     Electronic Lab Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#competency-portfolio">
+     Competency Portfolio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bacterial-identification">
+   Bacterial Identification
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plating-out-bacteria">
+     Plating out bacteria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gram-staining">
+     Gram Staining
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-1-differences-in-cell-wall-structure-in-gram-positive-and-gram-negative-bacteria">
+       Figure 1. Differences in cell wall structure in Gram-positive and Gram-negative bacteria.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-2-differential-staining-of-gram-positive-and-gram-negative-bacteria-using-the-gram-stain-procedure">
+       Figure 2. Differential staining of Gram-positive and Gram-negative bacteria using the Gram stain procedure.
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#figure-4-examples-of-common-morphologies-of-bacterial-cells-viewed-using-a-light-microscope">
+       Figure 4. Examples of common morphologies of bacterial cells viewed using a light microscope.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gram-stain-practical-instructions">
+     Gram Stain: Practical Instructions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-microscope">
+     Using the Microscope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#focus-the-specimen">
+     Focus the specimen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bacterial-dna-extraction">
+   Bacterial DNA Extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cell-lysis">
+     Cell Lysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inhibitor-removal">
+     Inhibitor Removal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dna-extraction-assessment">
+   DNA Extraction Assessment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#length-estimation">
+     Length Estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantity-of-dna">
+     Quantity of DNA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-of-dna">
+     Quality of DNA
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dna-extraction">
+   DNA extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#before-starting">
+     BEFORE STARTING
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lysis">
+     Lysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Inhibitor removal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spri-dna-binding">
+     SPRI DNA binding
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wash">
+     Wash
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elution">
+     Elution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessment-of-dna-extraction">
+   Assessment of DNA extraction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gel-electrophoresis">
+     Gel Electrophoresis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qubit-quantification">
+     Qubit Quantification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nanodrop-quality-assessment">
+     Nanodrop Quality Assessment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="overview-of-week-a">
+<h1>Overview of Week A<a class="headerlink" href="#overview-of-week-a" title="Permalink to this headline">#</a></h1>
+<p><img alt="week A schedule" src="../_images/weekA_timetable.png" /></p>
+<section id="goals-of-week-a">
+<h2>Goals of Week A<a class="headerlink" href="#goals-of-week-a" title="Permalink to this headline">#</a></h2>
+<p>This week you will</p>
+<ol class="simple">
+<li><p>Learn about bacterial genome sequencing through seminars and study</p></li>
+<li><p>Culture medically relevant bacteria</p></li>
+<li><p>Gram stain bacteria</p></li>
+<li><p>Prepare DNA from bacterial isolates</p></li>
+<li><p>Assess the quality and quantity of your DNA extraction</p></li>
+</ol>
+</section>
+<section id="learning-and-study">
+<h2>Learning and Study<a class="headerlink" href="#learning-and-study" title="Permalink to this headline">#</a></h2>
+<p>We will teach seminars on bacterial genome sequencing. You will have to
+read around this topic. We will set reading on Tuesday and hold a
+journal club to discuss the papers on Thursday. You must have read your
+papers and be prepared to discuss for this to work. Journal clubs are a
+great way to get taught a lot of information very quickly but you will
+have to contribute.</p>
+</section>
+<section id="assessed-portfolio-activities">
+<h2>Assessed Portfolio Activities<a class="headerlink" href="#assessed-portfolio-activities" title="Permalink to this headline">#</a></h2>
+<section id="electronic-lab-notebook">
+<h3>Electronic Lab Notebook<a class="headerlink" href="#electronic-lab-notebook" title="Permalink to this headline">#</a></h3>
+<p>This week you will begin your Google Docs electronic lab notebook. You
+will familiarise yourself with how to keep a notebook, what to record
+and when by viewing examples and discussion with academic staff.</p>
+</section>
+<section id="competency-portfolio">
+<h3>Competency Portfolio<a class="headerlink" href="#competency-portfolio" title="Permalink to this headline">#</a></h3>
+<p>This week you will have two competencies to document. These are
+described in more detail in the manual below.</p>
+<ol class="simple">
+<li><p>Bacterial Identification Figure</p></li>
+<li><p>DNA Extraction (quantity/quality/length) Figures</p></li>
+</ol>
+<p>+———————————————————————–+
+| <strong>Portfolio Competency 1:</strong> You should submit a single powerpoint     |
+| slide of a professionally formatted figure showing identification of  |
+| at least two environmental bacterial isolates and the study species,  |
+| using two complementary techniques. Your figure should                |
+| include:<img alt="" src="weekA/media/image5.png" />{width=”1.498128827646544in”             |
+| height=”1.498128827646544in”}                                         |
+|                                                                       |
+| -   High quality images with appropriate labels                       |
+|                                                                       |
+| -   Multiple sub-panels with labels (i.e. A, B, C etc)                |
+|                                                                       |
+| -   A figure title and caption including all relevant information.    |
++=======================================================================+
++———————————————————————–+</p>
+<p>+———————————————————————–+
+| <strong>Portfolio Competency 2:</strong> You should submit a single powerpoint     |
+| slide of a professionally formatted figure showing evidence (e.g.     |
+| image/table/graph) of the DNA quality/quantity/length for your        |
+| group’s chosen sample. Your figure should                             |
+| include:<img alt="" src="weekA/media/image5.png" />{width=”1.498128827646544in”             |
+| height=”1.498128827646544in”}                                         |
+|                                                                       |
+| -   High quality images with appropriate labels                       |
+|                                                                       |
+| -   Multiple sub-panels with labels (i.e. A, B, C etc)                |
+|                                                                       |
+| -   A figure title and caption including all relevant information.    |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+</section>
+<section id="bacterial-identification">
+<h2>Bacterial Identification<a class="headerlink" href="#bacterial-identification" title="Permalink to this headline">#</a></h2>
+<p>We are going to start by culturing bacteria from some clinically
+relevant samples, and then using traditional microbiology techniques to
+identify those bacteria. There are two techniques we will use:</p>
+<ol class="simple">
+<li><p>Culturing onto chromogenic agar</p></li>
+<li><p>Gram staining and microscopy</p></li>
+</ol>
+<p><strong>We are not providing you with step-by-step instructions of how to do
+this</strong> - we are giving you some background information and materials,
+and you need to work out how best to do this so you can achieve the
+competency standard.</p>
+<p><strong>You should also culture and Gram stain the two experimental strains we
+will use for sequencing, and include these in your
+figures.</strong><img alt="" src="weekA/media/image8.png" />{width=”6.1344739720035in”
+height=”4.483985126859142in”}</p>
+<p>Agar plates available</p>
+<ol>
+<li><p>Nutrient agar (LB)</p></li>
+<li><p>[[CHROMagar]{.underline} *[Staph</p>
+<blockquote>
+<div><p>aureus]{.underline}*](<a class="reference external" href="https://www.chromagar.com/wp-content/uploads/2021/11/LF-EXT-005-V8.0.pdf">https://www.chromagar.com/wp-content/uploads/2021/11/LF-EXT-005-V8.0.pdf</a>)</p>
+</div></blockquote>
+</li>
+<li><p>[[Brilliance UTI Clarity</p>
+<blockquote>
+<div><p>Agar]{.underline}](<a class="reference external" href="https://www.thermofisher.com/order/catalog/product/CM1106B?SID=srch-srp-CM1106B">https://www.thermofisher.com/order/catalog/product/CM1106B?SID=srch-srp-CM1106B</a>)</p>
+</div></blockquote>
+</li>
+<li><p>[[CP ChromoSelect</p>
+<blockquote>
+<div><p>Agar]{.underline}](<a class="reference external" href="https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/134/359/12398dat.pdf">https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/product/documents/134/359/12398dat.pdf</a>)</p>
+</div></blockquote>
+</li>
+</ol>
+<p>Incubators available: 37oC, 44oC</p>
+<section id="plating-out-bacteria">
+<h3>Plating out bacteria<a class="headerlink" href="#plating-out-bacteria" title="Permalink to this headline">#</a></h3>
+<p>Remember that there are two main methods for plating bacteria - streak
+plates and spread plates. You need to decide which is most appropriate.
+For both methods you will need to observe good sterile technique.</p>
+<p><img alt="" src="weekA/media/image11.png" />{width=”4.051140638670166in”
+height=”1.7300853018372704in”}</p>
+<p>Figure 1: Streak plate technique. Streak plates are used to isolate
+individual colonies of bacteria</p>
+<p><img alt="" src="weekA/media/image1.png" />{width=”6.5in” height=”2.2777777777777777in”}</p>
+<p>Figure 2: Spread plate technique. Streak plates are used to count the
+number of bacteria in a sample</p>
+</section>
+<section id="id1">
+<h3><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="gram-staining">
+<h3>Gram Staining<a class="headerlink" href="#gram-staining" title="Permalink to this headline">#</a></h3>
+<p>You will perform a Gram-stain test on the bacteria that you have
+subcultured. Briefly, the procedure enables you to differentiate
+bacteria on the basis of differences in the structure of the bacterial
+cell wall, and in particular on the different thicknesses of the
+peptidoglycan component. Gram-positive bacteria have a thick
+peptidoglycan cell wall, whilst Gram-negative have a thin peptidoglycan
+cell wall (Figure 1).</p>
+<p><img alt="" src="weekA/media/image2.png" />{width=”4.25in” height=”3.375in”}</p>
+<section id="figure-1-differences-in-cell-wall-structure-in-gram-positive-and-gram-negative-bacteria">
+<h4>Figure 1. Differences in cell wall structure in Gram-positive and Gram-negative bacteria.<a class="headerlink" href="#figure-1-differences-in-cell-wall-structure-in-gram-positive-and-gram-negative-bacteria" title="Permalink to this headline">#</a></h4>
+<p>In the Gram-stain test (Figure 2), you undertake a series of staining
+steps on bacterial cells that have been ‘heat fixed’ onto a microscope
+slide. Firstly, heat-fixed cells are treated with a solution of Crystal
+Violet which is taken up into the cell, staining the cells dark purple.
+Secondly, cells are then immersed in Gram’s iodine. The iodine forms an
+insoluble complex with the Crystal Violet stain. This complex can be
+extracted from Gram-negative bacteria by the addition of a solvent such
+as alcohol (NB today you will be using ‘Gram’s Differentiator’), but the
+complex is retained within Gram-positive bacteria, as the peptidoglycan
+layer is dehydrated by the alcohol, preventing the Crystal-violet-iodine
+complex from being removed from the cell. At this stage Gram-positive
+cells remain dark purple, whilst Gram-negative cells are colourless.
+Finally, cells are washed with the counterstain safranin, which stains
+the Gram-negative cells pink, whilst Gram-positive cells remain purple.
+Cells can then be viewed using a compound microscope (Figure 3), using
+the x100 oil immersion lens.</p>
+<p><img alt="" src="weekA/media/image17.png" />{width=”3.0729166666666665in”
+height=”3.2232731846019247in”}</p>
+</section>
+<section id="figure-2-differential-staining-of-gram-positive-and-gram-negative-bacteria-using-the-gram-stain-procedure">
+<h4>Figure 2. Differential staining of Gram-positive and Gram-negative bacteria using the Gram stain procedure.<a class="headerlink" href="#figure-2-differential-staining-of-gram-positive-and-gram-negative-bacteria-using-the-gram-stain-procedure" title="Permalink to this headline">#</a></h4>
+<p>Morphology</p>
+<p>In addition to distinguishing between bacteria with respect to their
+Gram-reaction, the use of microscopy also enables you to describe the
+morphology (the form and structure) of cells. Typical cell morphologies
+are shown in Figure 4. In this practical you will also be describing the
+morphology of your cells, which can also be used as a diagnostic
+feature.</p>
+<p><img alt="" src="weekA/media/image3.png" />{width=”5.2785498687664045in”
+height=”2.2656255468066493in”}</p>
+</section>
+<section id="figure-4-examples-of-common-morphologies-of-bacterial-cells-viewed-using-a-light-microscope">
+<h4>Figure 4. Examples of common morphologies of bacterial cells viewed using a light microscope.<a class="headerlink" href="#figure-4-examples-of-common-morphologies-of-bacterial-cells-viewed-using-a-light-microscope" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="gram-stain-practical-instructions">
+<h3>Gram Stain: Practical Instructions<a class="headerlink" href="#gram-stain-practical-instructions" title="Permalink to this headline">#</a></h3>
+<p>Equipment required</p>
+<ol class="simple">
+<li><p>Agar plates that you set up in Practical 1</p></li>
+<li><p>A Bunsen burner and tile stand</p></li>
+<li><p>A metal inoculation loop</p></li>
+<li><p>Four Glass slides</p></li>
+<li><p>A bottle containing 5ml distilled water</p></li>
+<li><p>A pair of forceps</p></li>
+<li><p>A clock timer</p></li>
+<li><p>A wash bottle containing distilled water</p></li>
+<li><p>A compound microscope</p></li>
+</ol>
+<p>On each bench there are also two workstations set up (one workstation
+per four students) for performing Gram stains. At each workstation,
+there are the following materials:</p>
+<ol>
+<li><p>A staining tray and staining rack</p></li>
+<li><p>A bottle/dropper containing Crystal violet solution</p></li>
+<li><p>A bottle/dropper containing Gram’s iodine solution</p></li>
+<li><p>A bottle/dropper containing decolorizing solution (Gram’s</p>
+<blockquote>
+<div><p>Differentiator)</p>
+</div></blockquote>
+</li>
+<li><p>A bottle/dropper containing Safranin solution</p></li>
+<li><p>Boxes of Lens tissue</p></li>
+<li><p>Bottles of microscope immersion oil</p></li>
+<li><p>Blotting paper</p></li>
+</ol>
+<p>Video to explain gram staining technique, see
+<a class="reference external" href="https://www.youtube.com/watch?v=sxa46xKfIOY">[https://www.youtube.com/watch?v=sxa46xKfIOY]{.underline}</a></p>
+<blockquote>
+<div><p>2. Using a permanent marker pen, label each of the four slides at one
+end with a name and/or number that will enable you to identify which
+slide corresponds to which bacterial isolate.</p>
+<p>3. Light your Bunsen burner and rotate the sleeve so that you have a
+bright blue (roaring) flame.</p>
+<p>4. Hold the inoculation loop by the long handle and then heat the
+small circular ‘loop’ in the middle of the blue flame, until the loop
+glows bright red.</p>
+<p>5. Using the flame-sterilised inoculation loop, place a single small
+drop of distilled water onto the centre of the microscope slide by
+dipping the loop into the bottle containing 5ml distilled water and
+then touching the loop onto the glass slide. [NB]{.underline} Only a
+very small drop of water should be used since a larger amount will
+take too long to dry. If you add too much water, wipe the slide clean
+with a clean tissue and start again.</p>
+<p>6. Hold the inoculation loop by the long handle and then heat the
+small circular ‘loop’ in the middle of the blue flame, until the loop
+glows bright red.</p>
+<p>7. Quickly touch the hot surface of the loop onto an un-colonised
+area of the surface of the agar plate that contains the microbial
+colony that you plan to use for the Gram stain.</p>
+<p>8. Now, touch the loop onto a [single colony]{.underline} that you
+are using for the Gram stain. Ensure that you can see that some of the
+colony has adhered to the loop. It is important [NOT]{.underline} to
+overload the slide for the Gram stain test, therefore, only very
+lightly touch the colony selected. Do not put the inoculation loop
+down on the bench.</p>
+<p>9. With the inoculation loop carrying the bacteria you have selected,
+now gently smear the cells on the loop into the droplet of water on
+the glass slide. Try to ensure that you maintain only a very small
+smear in the centre of the slide and don’t spread it too far. Leave
+the slide to dry on the bench in a place where it will not contact or
+contaminate anything.</p>
+<p>10. Now sterilise the inoculation loop by heating the ‘loop’ in the
+middle of the blue flame, until the loop glows bright red. When cool,
+this can then be placed down on the bench.</p>
+<p>11. It is very important that the smear on the glass slide should be
+dry before doing this next step. Once the smeared droplet of water
+containing the bacteria on the slide has dried, pick up the glass
+slide securely using the forceps. Hold the slide with the smear facing
+upwards and pass the slide briefly through the centre of the Bunsen
+burner blue flame. This will leave a heat-fixed smear of bacterial
+cells on the slide ready for staining. Watch a demonstrator do this
+step first. Take great care when wearing gloves to do this step, to
+avoid a possible burn when passing the slide through the flame. Use
+forceps to handle the slides rather than touching them directly while
+using the Bunsen burner.</p>
+<p>12. Repeat steps 4-11 for all of the samples on which you will be
+performing a Gram stain.</p>
+<p>13. Turn off your Bunsen burner - the staining solutions are
+flammable!</p>
+</div></blockquote>
+<p>+———————————————————————–+
+| &gt; [NB]{.underline} The next stages of the procedure are               |
+| &gt; time-sensitive so read thoroughly through the following steps       |
+| &gt; before starting.                                                    |
++=======================================================================+
++———————————————————————–+</p>
+<blockquote>
+<div><p>14. At the staining workstation, place the staining rack across the
+staining tray. Now place your four microscope slides horizontally
+across the staining rack with the smear side facing upwards.</p>
+<p>15. Using the bottle/dropper, cover the slides with <strong>Crystal
+Violet</strong>.</p>
+<p>16. After 30 seconds, wash off all of the Crystal Violet solution
+from the slides using the wash bottle containing distilled water.</p>
+<p>17. Using the bottle/dropper, cover the slides with <strong>Gram’s
+iodine</strong>.</p>
+<p>18. After 30 seconds, wash off all of the Gram’s iodine solution from
+the slides using the wash bottle containing distilled water.</p>
+<p>19. Using forceps and keeping the slide over the staining rack, hold
+the slide pointing downwards into the staining tray at an angle and
+using the bottle/dropper, flood the slides with <strong>Decolourising
+solution (Gram’s Differentiator)</strong>, until no further purple stain is
+removed. NB apply the Decolourising solution rapidly in a stream of
+solution not gently as drops.</p>
+<p>20. Immediately, wash off all of the Decolourising solution from the
+slides using the wash bottle containing distilled water.</p>
+<p>21. Using the bottle/dropper, cover the slides with <strong>Safranin</strong>
+solution.</p>
+<p>22. After 1 minute, wash off all of the Safranin solution from the
+slides using the wash bottle containing distilled water.</p>
+<p>23. Place the slides onto clean blotting paper and blot the slide
+dry.</p>
+<p>24. To use the microscope you must make sure your gloves are clean,
+so if they are stained or contaminated, change them.</p>
+<p>25. Examine the Gram-stained cells under the microscope. Set the
+microscope to the x100 oil immersion lens and place a couple of drops
+of microscope immersion oil on top of the stained smear on the glass
+slide.</p>
+<p>26. Focus the microscope and observe the microbial cells which are
+visible on the glass slide.</p>
+<p>27. Take a professional standard photograph of your microbial cells.</p>
+</div></blockquote>
+<p>Wash your hands with soap and water immediately (see page 8) for
+detailed instructions</p>
+</section>
+<section id="using-the-microscope">
+<h3>Using the Microscope<a class="headerlink" href="#using-the-microscope" title="Permalink to this headline">#</a></h3>
+<p>The microscope is a key piece of equipment for looking at cells - we
+will be developing your microscopy skills throughout this module and
+through the rest of your programme. Today we will be doing some pretty
+‘rough and ready’ microscopy to look at our gram stained slides - you
+will learn more sophisticated strategies for getting really good images
+later in the module.</p>
+<p>Video for good microscopy practice:
+<a class="reference external" href="https://www.youtube.com/watch?v=cnj2y_Bpu-w">[https://www.youtube.com/watch?v=cnj2y_Bpu-w]{.underline}</a></p>
+<p><img alt="" src="weekA/media/image7.png" />{width=”5.979166666666667in”
+height=”3.4270833333333335in”}</p>
+<p>[NB your microscope might be slightly different to this, but the basic
+design will be the same].</p>
+<p>+———————————————————————–+
+| Care of the Microscope                                                |
+|                                                                       |
+| &gt; Please remember that it is a delicate precision instrument – you   |
+| &gt; don’t need to be scared of it, but the more carefully you set the   |
+| &gt; microscope up the better the quality of your images                 |
+|                                                                       |
+| -   Never force any control.                                          |
+|                                                                       |
+| -   Always lift it by grasping the limb firmly.                       |
+|                                                                       |
+| -   Always replace the plastic cover after use to keep dust off.      |
+|                                                                       |
+| -   Keep the glass above the light source free from dust and dirt.    |
+|                                                                       |
+| -   Keep the top lenses of the objectives clean [lens tissue         |
+|     &gt; available – do not use regular tissue].                       |
+|                                                                       |
+| -   Do not attempt to remove or dismantle any component.              |
+|                                                                       |
+| If you aren’t sure what to do, find a demonstrator or the practical   |
+| organiser and ask for help.                                           |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+<section id="id2">
+<h3><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="focus-the-specimen">
+<h3>Focus the specimen<a class="headerlink" href="#focus-the-specimen" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Set up the microscope with the x4 objective pointing towards the</p>
+<blockquote>
+<div><p>specimen</p>
+</div></blockquote>
+</li>
+<li><p>Put the slide on the stage with the material to be studied on the</p>
+<blockquote>
+<div><p>upper surface of the slide, and clip into place</p>
+</div></blockquote>
+</li>
+<li><p>Switch on the illumination and turn to the lowest brightness setting</p>
+<blockquote>
+<div><p>that is still visible</p>
+</div></blockquote>
+</li>
+<li><p>Use the stage controls to move the slide so that the circle of light</p>
+<blockquote>
+<div><p>falls in the middle of the specimen</p>
+</div></blockquote>
+</li>
+<li><p>While looking at the microscope from the side, move the stage up to</p>
+<blockquote>
+<div><p>its highest position using the coarse focus dial (the large dial)</p>
+</div></blockquote>
+</li>
+<li><p>Look down the right eyepiece of the binocular head (keep left eye</p>
+<blockquote>
+<div><p>shut). Slowly lower the stage using the coarse focus until you see
+the specimen come roughly into focus</p>
+</div></blockquote>
+</li>
+<li><p>Open both eyes and slide the two eyepieces together or apart until</p>
+<blockquote>
+<div><p>the two images fuse perfectly. Do not strain or squint: keep the
+eyes relaxed (looking at infinity) or the images will not fuse.</p>
+</div></blockquote>
+</li>
+<li><p>Re-focus with the fine focus (small dial) control if necessary. Note</p>
+<blockquote>
+<div><p>and remember the reading scale; this is your interpupillary
+distance (average 62mm), which you always set before using any
+binocular optical instrument.</p>
+</div></blockquote>
+</li>
+<li><p>Once you have a focussed image using the x4 objective, swing the x10</p>
+<blockquote>
+<div><p>objective into place. Do not move the focus dials while doing
+this - you need to keep the slide in the same place!</p>
+</div></blockquote>
+</li>
+<li><p>Adjust the fine focus dial only until the image comes into focus.</p></li>
+<li><p>Once you have focussed using the x10 objective, repeat for the x40</p>
+<blockquote>
+<div><p>objective. Only use the fine focus dial.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>Once you have focussed using the x40, you are ready to use the x100
+objective to see the individual bacterial cells. However, due to the
+optical properties of the microscope you will not get a clear image
+looking straight down the x100 lens. You need to add some microscope
+immersion oil to get a clear image.</p>
+<ol>
+<li><p>Swing the x40 objective lens away from your sample, but do not put</p>
+<blockquote>
+<div><p>the x100 lens into place.</p>
+</div></blockquote>
+</li>
+<li><p>Place a drop of immersion oil on the centre of your sample.</p></li>
+<li><p>Swing the x100 objective lens into place. Adjust the fine focus dial</p>
+<blockquote>
+<div><p>until you get a sharp focussed image of the cells. Do not go back
+to the x40 lens once there is oil on your sample!</p>
+</div></blockquote>
+</li>
+<li><p>Once you have finished observing your cells, remember to wipe the</p>
+<blockquote>
+<div><p>x100 lens clean with the special lens tissue - do not use normal
+tissue as it will damage the microscope.</p>
+</div></blockquote>
+</li>
+</ol>
+<p></p>
+<p>+———————————————————————–+
+| REMEMBER                                                              |
+|                                                                       |
+| You should always start with the lowest power lens (i.e. x4) and      |
+| focus your image, then increase to the next power lens (i.e. x10).    |
+|                                                                       |
+| You might need to adjust the fine focus slightly when you change      |
+| lenses, but you shouldn’t need to adjust the coarse focus.            |
+|                                                                       |
+| If you can no longer ‘find’ your sample because it is really out of   |
+| focus, go back to a lower powered lens and start again - you will     |
+| never find it by just moving the dials back and forward under a high  |
+| powered lens!                                                         |
++=======================================================================+
++———————————————————————–+</p>
+<p>Upon completion of the practical, WASH your hands with soap and water
+[immediately]{.underline} following the procedure shown below</p>
+<p><img alt="" src="weekA/media/image13.png" />{width=”5.295145450568679in”
+height=”7.463542213473316in”}</p>
+<p>Source: <a class="reference external" href="http://www.who.int/gpsc/clean_hands_protection/en/">http://www.who.int/gpsc/clean_hands_protection/en/</a></p>
+</section>
+</section>
+<section id="id3">
+<h2><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bacterial-dna-extraction">
+<h2>Bacterial DNA Extraction<a class="headerlink" href="#bacterial-dna-extraction" title="Permalink to this headline">#</a></h2>
+<p>Traditional identification methods for bacteria, such as gram staining,
+morphology description, and selective agars, are helpful for getting
+general information about a bacterial species of interest; however, they
+cannot tell us everything we need to know. Often, we need to be able to
+identify bacteria down to the strain level and we can do this in a
+matter of days by looking at the genomes of bacteria. In order to
+perform genomic analysis we must sequence, or read the bases of, the DNA
+from bacterial isolates, such as the plates you streaked earlier this
+week. Before DNA can be sequenced though it must be pulled out of the
+bacterial cells by performing DNA extraction.</p>
+<section id="cell-lysis">
+<h3>Cell Lysis<a class="headerlink" href="#cell-lysis" title="Permalink to this headline">#</a></h3>
+<p>There are a variety of methods used to extract DNA from bacteria, but
+the method you will be using is a fairly standard process that utilises
+multiple types of cell lysis. This approach can be beneficial because it
+can be difficult to break open bacterial cells without destroying their
+DNA. Additionally, the differences in morphologies and cell wall
+structures of bacterial species means that DNA extraction protocols tend
+to be more effective when a variety of approaches is applied. For
+instance, the fragility of gram negatives’ cell walls make them
+particularly vulnerable to <strong>mechanical lysis</strong>, such as the use of
+garnet beads and vigorous shaking applied in the methods below.</p>
+<p>Mechanical lysis is a common and effective method used for DNA
+extraction, but it is not very effective on gram positive species due to
+their strong, thick cell walls. Often an additional form of <strong>chemical
+lysis</strong> is necessary to break all the layers of peptidoglycan in these
+cells. To help you extract DNA from gram positive cells, you will be
+using SDS in the <strong>Water Lysis Additive</strong>, which is a detergent, not
+unlike a tough dish soap you have at home, that helps break up lipids.
+You will also use a form of <strong>enzymatic lysis</strong> to help SDS break the
+peptidoglycan layers by putting <strong>Proteinase K</strong> in with your sample.
+<strong>Proteinase K</strong> is a protease enzyme that digests proteins and, like
+penicillin, was originally discovered in the extracts of a fungus!</p>
+<p><img alt="" src="weekA/media/image9.png" />{width=”4.948910761154855in”
+height=”2.227557961504812in”}</p>
+<p>Figure 1: Example of chemical lysis using a detergent, such as SDS.</p>
+</section>
+<section id="inhibitor-removal">
+<h3>Inhibitor Removal<a class="headerlink" href="#inhibitor-removal" title="Permalink to this headline">#</a></h3>
+<p>Once all the cells in a sample, such as the colonies you will be
+scraping off of your plates, are lysed and the DNA is freely floating,
+we must remove any compounds that could affect later steps in our lab
+work. Cell lysis leads to the broken bits of cells freely floating in
+your sample and involves the use of a variety of chemicals, both of
+which may inhibit the solutions we have to use later for sequencing. To
+remove these components and clean up your DNA you will be using 2
+methods. The first step is using <strong>Flocculant Solution</strong>, an agent that
+helps to separate solids, like pieces of cells, and liquids, like the
+solution containing your DNA, by compressing tiny particles and forcing
+them to sink to the bottom of a container.</p>
+<p><img alt="" src="weekA/media/image19.png" />{width=”3.843312554680665in”
+height=”2.294154636920385in”}<img alt="" src="weekA/media/image20.png" />{width=”0.900508530183727in”
+height=”0.23389326334208224in”}<img alt="" src="weekA/media/image20.png" />{width=”0.900508530183727in”
+height=”0.3639818460192476in”}<img alt="" src="weekA/media/image20.png" />{width=”1.3030402449693788in”
+height=”1.4948326771653544in”}</p>
+<p>Figure 2: Inhibitor removal using flocculation solution to coagulate and
+compress solids, separating them from a solution’s liquid.</p>
+<p>Next, to ensure your final solution contains only clean DNA, <strong>solid
+phase reversible immobilisation</strong> (SPRI) is implemented. This method
+utilises the inherent negative charge of DNA to pull it out of the
+solution by adding magnetic beads that have a special surface, which DNA
+attaches to and allows us to dispose of the rest of the solution.
+Additionally, SPRI is ideal for genome and long read sequencing, such as
+Nanopore sequencing, because it is a very gentle method that helps to
+select sequences larger than 1kb.</p>
+<p><img alt="" src="weekA/media/image10.png" />{width=”5.874057305336833in”
+height=”1.9823797025371828in”}</p>
+<p>Figure 3: Solid phase reversible immobilisation using magnetic beads to
+attract and gather DNA, allowing for the removal of impurities.</p>
+</section>
+</section>
+<section id="dna-extraction-assessment">
+<h2>DNA Extraction Assessment<a class="headerlink" href="#dna-extraction-assessment" title="Permalink to this headline">#</a></h2>
+<p>Once your DNA is extracted and cleaned up, you will have to make sure
+there is enough of your DNA and that it is long and clean enough to
+sequence. DNA sequencing is an arduous, expensive process and,
+therefore, you need to make absolutely sure that the extracted DNA meets
+the minimum requirements for the Nanopore sequencing machine. In Week B
+your group will be sequencing the DNA that was extracted, but only one
+of your 3 samples can go on to be sequenced. Using the methods below for
+DNA extraction assessment, you will determine whether your sample meets
+the sequencing requirements and, as a group, pick one to go into the
+sequencing machine. Your Portfolio Competency 2 will require the results
+you produce in this stage to be the evidence of which sample your group
+chooses and why.</p>
+<section id="length-estimation">
+<h3>Length Estimation<a class="headerlink" href="#length-estimation" title="Permalink to this headline">#</a></h3>
+<p>In order to sequence a bacterial genome, your DNA sequences will have to
+be quite long. The extraction protocol described below is relatively
+gentle and that helps to ensure your DNA is not too broken to eventually
+form a whole genome. The average length of your extracted DNA sequences
+can be assessed by running it through gel electrophoresis. The DNA
+ladder you will be using is for long sequences, like those for genome
+sequencing with Nanopore technology, and, therefore, you should see
+bands towards the top of your gel. <em><strong>The ideal length for your DNA
+sequences is equal to or greater than 10-20kb</strong></em>.</p>
+<p><img alt="" src="weekA/media/image18.png" />{width=”6.024880796150481in”
+height=”4.639628171478565in”}</p>
+<p>Figure 4: Example of a gel image with 4 samples, only one of which has
+DNA long enough for genome sequencing.</p>
+</section>
+<section id="quantity-of-dna">
+<h3>Quantity of DNA<a class="headerlink" href="#quantity-of-dna" title="Permalink to this headline">#</a></h3>
+<p>In addition to having long enough DNA, you have to make sure there is
+enough to actually sequence. Too little DNA and there will not be enough
+for the device to give you sequences. Too much DNA and you will
+essentially overwhelm the device, again preventing it from giving you
+sequences. You will use a machine for quantifying DNA, called a <strong>Qubit
+fluorometer</strong>, which will measure the concentration of DNA in your
+solution (e.g. 13 nanograms of DNA in 1 microliter of Elution Buffer).
+<em><strong>The amount of DNA that you must have to sequence your sample is 25-50
+ng/µL.</strong></em></p>
+<p><img alt="" src="weekA/media/image14.png" />{width=”5.377504374453193in”
+height=”1.6804702537182852in”}</p>
+<p>Figure 5: General process in Qubit quantification, where a fluorescent
+dye that attaches to DNA is added and, once attached, emits a special
+signal. The DNA is quantified by measuring the intensity of that signal.</p>
+</section>
+<section id="quality-of-dna">
+<h3>Quality of DNA<a class="headerlink" href="#quality-of-dna" title="Permalink to this headline">#</a></h3>
+<p>Finally, you must ensure that your DNA is clean enough to be sequenced.
+If there are too many salts, proteins, or any other inhibitory compounds
+leftover from DNA extraction, your DNA cannot be sequenced. You will be
+using a <strong>Nanodrop spectrophotometer</strong> to determine whether your sample
+is clean enough. This machine passes an ultraviolet light through your
+sample and measures the light that passes through, the absorbance is
+measured and plotted. Your results will be a plot with the absorbance on
+the y-axis and the wavelength in nanometers on the x-axis. <em><strong>Ideally,
+your plot will look very similar to the one shown below, which shows
+that there is a lot of DNA and very little of anything else.</strong></em></p>
+<p><img alt="" src="weekA/media/image12.png" />{width=”4.580007655293088in”
+height=”3.2451312335958007in”}</p>
+<p>Figure 6: Plot of spectrophotometer results from a nanodrop machine with
+the absorbance range (10mm equivalent) as the y-axis and the wavelength
+in nanometers as the x-axis. DNA and RNA are shown to have a high level
+of absorbance at 260 nm, while salts have a low absorbance at 230 nm and
+proteins have a low absorbance at 280 nm.</p>
+<p>+———————————————————————–+
+| Tips for Successful Lab Research                                      |
+|                                                                       |
+| Keep these in mind throughout your research to help prevent mistakes  |
+| and ensure your work goes smoothly.                                   |
+|                                                                       |
+| -   Keep your workstation clean and be careful to not contaminate     |
+|     &gt; your samples and solutions                                      |
+|                                                                       |
+| -   Carefully and clearly label <strong>all</strong> your tubes                    |
+|                                                                       |
+| -   Create a naming system for tubes and samples in your group to     |
+|     &gt; prevent confusion                                               |
+|                                                                       |
+| -   Always double check that you have the correct pipette with the    |
+|     &gt; correct amount BEFORE drawing up all solutions                  |
+|                                                                       |
+| -   In fact, always double check that you are drawing up the correct  |
+|     &gt; solution - using the wrong solution can ruin the whole          |
+|     &gt; experiment!                                                     |
+|                                                                       |
+| -   Use your non-dominant hand, such as a pinky above the tip, to     |
+|     &gt; help balance your pipette (ask a demonstrator if unsure about   |
+|     &gt; this technique)                                                 |
+|                                                                       |
+| -   As you progress through a protocol, check off completed steps     |
+|                                                                       |
+| -   Take thorough lab notes throughout the lab work, including notes  |
+|     &gt; on naming systems, issues encountered, and all results - even   |
+|     &gt; take photos if you need to!                                     |
+|                                                                       |
+| -   Always ask questions if unsure of anything!                       |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+</section>
+<section id="dna-extraction">
+<h2>DNA extraction<a class="headerlink" href="#dna-extraction" title="Permalink to this headline">#</a></h2>
+<p>Modified modular universal DNA (muDNA) extraction protocol for eventual
+genome sequencing of bacterial colonies.</p>
+<p>Equipment required</p>
+<ol class="simple">
+<li><p>P1000, P200, and P10 pipettes and pipette tips</p></li>
+<li><p>1-1.4 mm diameter sterile garnet beads</p></li>
+<li><p>2 ml screw cap tube</p></li>
+<li><p>Sterile plastic inoculation loop</p></li>
+<li><p>TissueLyser II</p></li>
+<li><p>Thermomixer</p></li>
+<li><p>Centrifuge</p></li>
+<li><p>1.5 ml LoBind tube x3</p></li>
+<li><p>Hulamixer</p></li>
+<li><p>Magnetic tube stand</p></li>
+</ol>
+<p>Each group of three students will have a workstation for the next
+section of research. In the end, only one sample from each group will be
+used for sequencing, but for this next bit of lab work each student will
+use the protocol below to extract a sample taken from the isolated
+cultures grown earlier in the week; therefore, each student will go
+through the DNA extraction protocol described below for their own
+sample, but each group will also work together to complete this protocol
+successfully, with 3 extractions in total. Work with your group before
+starting to determine a naming system for your samples so that you know
+which tube belongs to who. At each workstation, there are the following
+materials:</p>
+<ol class="simple">
+<li><p>Appropriate pipettes and pipette tips (P1000, P200, and P10)</p></li>
+<li><p>Sterile plastic inoculation loops x3</p></li>
+<li><p>A container of sterile garnet beads</p></li>
+<li><p>2 ml screw cap tubes x3</p></li>
+<li><p>1.5 ml LoBind tubes x9</p></li>
+<li><p>Tube rack</p></li>
+<li><p>Red top disposal jar</p></li>
+<li><p>Lysis solution</p></li>
+<li><p>Water lysis additive</p></li>
+<li><p>Proteinase K</p></li>
+<li><p>Flocculant solution</p></li>
+<li><p>Wash solution</p></li>
+<li><p>Elution buffer</p></li>
+<li><p>Scale</p></li>
+<li><p>Weigh boat (sterile)</p></li>
+<li><p>Pen</p></li>
+</ol>
+<section id="before-starting">
+<h3>BEFORE STARTING<a class="headerlink" href="#before-starting" title="Permalink to this headline">#</a></h3>
+<p>Take <strong>DNA Extraction Bead Solution</strong> from the fridge and allow it to
+reach room temperature. Vortex to mix thoroughly.</p>
+</section>
+<section id="lysis">
+<h3>Lysis<a class="headerlink" href="#lysis" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Add 0.5 g (2 X sample weight) of 1-1.4 mm diameter sterile garnet</p>
+<blockquote>
+<div><p>beads to a 2 ml screw cap tube</p>
+</div></blockquote>
+</li>
+<li><p>Add 550 µL of <strong>Lysis Solution</strong></p></li>
+<li><p>Add 200 µL of <strong>Water Lysis Additive</strong></p></li>
+<li><p>Add 60 µL of <strong>Proteinase K</strong> and vortex briefly</p></li>
+<li><p>Take a sterile loop and scrape 1-3 colonies (enough to clearly see</p>
+<blockquote>
+<div><p>the bacteria gathered on the loop) off of the agar plate you
+streaked yesterday - be careful to only scrape up bacteria and not
+the agar!</p>
+</div></blockquote>
+</li>
+<li><p>Put the loop into the solution of the 2 ml screw cap tube and gently</p>
+<blockquote>
+<div><p>shake the loop until the colonies have fallen off in the liquid</p>
+</div></blockquote>
+</li>
+<li><p>Place in TissueLyser II (or similar horizontal beating apparatus) at</p>
+<blockquote>
+<div><p>30 Hz for 10 minutes</p>
+</div></blockquote>
+</li>
+<li><p>Place in Thermomixer 400 rpm at 56°C for 2 hours</p></li>
+<li><p>Place in TissueLyser II (or similar horizontal beating apparatus) at</p>
+<blockquote>
+<div><p>30 Hz for 10 minutes</p>
+</div></blockquote>
+</li>
+<li><p>Centrifuge 10000xg at room temperature for 1 minute</p></li>
+<li><p>Transfer 700 µL supernatant to a 1.5 ml LoBind tube</p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>Inhibitor removal<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Add 200 µL (0.3 X volume) of <strong>Flocculant Solution</strong></p></li>
+<li><p>Invert several times to mix and incubate on ice for a minimum of 10</p>
+<blockquote>
+<div><p>minutes</p>
+</div></blockquote>
+</li>
+<li><p>Centrifuge 10000xg at room temperature for 2 minutes</p></li>
+<li><p>Without disturbing the pellet, transfer 600 µL supernatant to a</p>
+<blockquote>
+<div><p>fresh 1.5 ml LoBind tube</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="spri-dna-binding">
+<h3>SPRI DNA binding<a class="headerlink" href="#spri-dna-binding" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Add 600 µL (1 X volume) of <strong>DNA Extraction Bead Solution</strong></p></li>
+<li><p>Place on HulaMixer (continual rotation, 30 01 orbital rpm,</p>
+<blockquote>
+<div><p>reciprocal and vibro off) for 10 minutes</p>
+</div></blockquote>
+</li>
+<li><p>Place on magnetic stand until supernatant is clear and beads are</p>
+<blockquote>
+<div><p>bound towards magnet</p>
+</div></blockquote>
+</li>
+<li><p>While on the stand carefully remove and discard supernatant without</p>
+<blockquote>
+<div><p>disturbing beads</p>
+</div></blockquote>
+</li>
+</ol>
+<p>+———————————————————————–+
+| &gt; The next stages of the procedure are time-sensitive so read         |
+| &gt; thoroughly through the following steps before starting.             |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+<section id="wash">
+<h3>Wash<a class="headerlink" href="#wash" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Add 1000 µL <strong>Wash Solution</strong></p></li>
+<li><p>Incubate at room temperature for 30 seconds</p></li>
+<li><p>While on the stand carefully remove and discard supernatant without</p>
+<blockquote>
+<div><p>disturbing beads</p>
+</div></blockquote>
+</li>
+<li><p>Repeat 3 steps above a further time</p></li>
+<li><p>Centrifuge tube for 1 second (be very brief and ensure the beads are</p>
+<blockquote>
+<div><p>facing downwards) and place back on the magnetic stand ensuring
+beads are bound towards the magnet.</p>
+</div></blockquote>
+</li>
+<li><p>Remove all remaining <strong>Wash Solution</strong> with a 10 µL pipette</p></li>
+<li><p>Air dry tube with cap open until beads are completely dry (i.e. no</p>
+<blockquote>
+<div><p>longer shiny), approximately 10-20 minutes</p>
+</div></blockquote>
+</li>
+</ol>
+<p>+———————————————————————–+
+| &gt; Be very careful in steps 20-26 to not disturb the magnetic beads!   |
+| &gt;                                                                     |
+| &gt; When putting your pipette into the tube, be slow and controlled so  |
+| &gt; that the tip does not touch the beads. When putting solutions into  |
+| &gt; the tube, be very careful to not let the liquid hit the beads as it |
+| &gt; leaves the pipette. When taking your pipette out of the tube, do    |
+| &gt; not allow the tip to hit the sides of the tube. A steady hand and 3 |
+| &gt; points of contact will help!                                        |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+<section id="elution">
+<h3>Elution<a class="headerlink" href="#elution" title="Permalink to this headline">#</a></h3>
+<ol>
+<li><p>Add 100 µL <strong>Elution Buffer</strong> (55°C) and gently flick to resuspend</p>
+<blockquote>
+<div><p>beads (ensure all beads are resuspended with no clumps)</p>
+</div></blockquote>
+</li>
+<li><p>Centrifuge tube for 1 second</p></li>
+<li><p>Place in Thermomixer 550 rpm at 55°C for 10 minutes</p></li>
+<li><p>Centrifuge tube for 1 second</p></li>
+<li><p>Place on magnetic stand until supernatant is clear and beads are</p>
+<blockquote>
+<div><p>bound towards magnet</p>
+</div></blockquote>
+</li>
+<li><p>Carefully transfer eluate to a fresh 1.5 ml LoBind tube without</p>
+<blockquote>
+<div><p>disturbing beads</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="assessment-of-dna-extraction">
+<h2>Assessment of DNA extraction<a class="headerlink" href="#assessment-of-dna-extraction" title="Permalink to this headline">#</a></h2>
+<p>We are now going to assess the quality and quantity of your extractions
+before preparing your samples for sequencing (Week B). This will also be
+used to prepare Portfolio Competency 2.</p>
+<p>Equipment required</p>
+<ol class="simple">
+<li><p>P1000, P200, P20, P10, and P2 pipettes and pipette tips</p></li>
+<li><p>Gel tray</p></li>
+<li><p>Gel comb</p></li>
+<li><p>Melted agarose</p></li>
+<li><p>Electrophoresis tanks</p></li>
+<li><p>PCR strip tubes</p></li>
+<li><p>1.5 ml LoBind tubes</p></li>
+<li><p>10mL tube</p></li>
+<li><p>Qubit tubes</p></li>
+<li><p>Qubit machine</p></li>
+<li><p>Nanodrop spectrophotometer</p></li>
+<li><p>KIMTECH lint-free wipe</p></li>
+</ol>
+<p>Each group of three students will have a workstation for the next
+section of research. In the end, only one sample from each group will be
+used for sequencing, but for this next bit of lab work each student will
+use the protocols below to assess the DNA extraction you performed
+previously. While you should be working the sample you extracted for the
+next steps, the total number of samples for your group should be used
+for calculations. The work in this protocol should be split up within
+your group by the samples you worked with previously, but the working
+solutions made in these protocols should be shared in your group. At
+each workstation, there are the following materials:</p>
+<ol>
+<li><p>Appropriate pipettes and pipette tips (P1000, P200, P20, P10, and</p>
+<blockquote>
+<div><p>P2)</p>
+</div></blockquote>
+</li>
+<li><p>Gel tray</p></li>
+<li><p>Gel comb</p></li>
+<li><p>A breaker of agarose</p></li>
+<li><p>Masking tape</p></li>
+<li><p>Pen</p></li>
+<li><p>PCR strip tubes</p></li>
+<li><p>GeneRuler 1kb Plus DNA Ladder</p></li>
+<li><p>Gel electrophoresis loading dye</p></li>
+<li><p>1.5 LoBind tubes</p></li>
+<li><p>10mL tube</p></li>
+<li><p>Qubit tubes</p></li>
+<li><p>Elution buffer</p></li>
+<li><p>Qubit buffer</p></li>
+<li><p>Qubit dye</p></li>
+</ol>
+<p>To assess the quality of your DNA extraction we will use three methods:</p>
+<section id="gel-electrophoresis">
+<h3>Gel Electrophoresis<a class="headerlink" href="#gel-electrophoresis" title="Permalink to this headline">#</a></h3>
+<p>Remove extracted DNA from the freezer, allowing it to reach room
+temperature, and watch a demonstration of how to pour a gel before
+starting.</p>
+<ol>
+<li><p>Seal the ends of your gel tray with tape and place the comb at the</p>
+<blockquote>
+<div><p>top to create a row of wells.</p>
+</div></blockquote>
+</li>
+<li><p>If it hasn’t already been added, get one of the technicians to add</p>
+<blockquote>
+<div><p>the <strong>GelRed stain</strong> to your agarose. Take the melted agarose
+provided and pour steadily into the tray avoiding bubbles.</p>
+</div></blockquote>
+</li>
+<li><p>Allow to set for 20-30 minutes</p></li>
+<li><p>Remove the combs carefully and take off the sealing tape being</p>
+<blockquote>
+<div><p>careful that the gel doesn’t slip out of the tray.</p>
+</div></blockquote>
+</li>
+<li><p>Place the tray and gel in the electrophoresis tank (power connection</p>
+<blockquote>
+<div><p>on the right) with the wells furthest from you and slowly fill
+with <strong>sodium borate</strong> running buffer until the gel is just
+submerged.</p>
+</div></blockquote>
+</li>
+<li><p>Put 5 µL of extracted DNA into a PCR strip tube.</p></li>
+<li><p>Load 5 µL of the <strong>GeneRuler 1kb Plus DNA ladder (diluted 1:1)</strong></p>
+<blockquote>
+<div><p>into the first lane of the gel.</p>
+</div></blockquote>
+</li>
+<li><p>Add 1 µL of <strong>loading dye</strong> to the 5 µL of extracted DNA, mix and</p>
+<blockquote>
+<div><p>load 6 µL of this onto your gel. Record the order of loaded
+samples onto the templates by each gel tank</p>
+</div></blockquote>
+</li>
+<li><p>Place on the lid and ask a demonstrator to connect to the power</p>
+<blockquote>
+<div><p>supply at ~150 volts.</p>
+</div></blockquote>
+</li>
+<li><p>Run the gel for ~90 minutes at 200V</p></li>
+<li><p>After the gel has been removed and washed you will be called up to</p>
+<blockquote>
+<div><p>take a gel photo.</p>
+</div></blockquote>
+</li>
+<li><p>Annotate your photograph with the contents of each lane and the size</p>
+<blockquote>
+<div><p>of your bands. Are the bands the expected sizes? Does your DNA
+meet sequencing requirements?</p>
+</div></blockquote>
+</li>
+</ol>
+<p><img alt="" src="weekA/media/image6.png" />{width=”2.9829002624671914in”
+height=”5.0263812335958in”}</p>
+</section>
+<section id="qubit-quantification">
+<h3>Qubit Quantification<a class="headerlink" href="#qubit-quantification" title="Permalink to this headline">#</a></h3>
+<p>To accurately quantify all species of interest, DNA quantification using
+Qubit will be performed on both the initial DNA extracted from your
+plate and on a 1 in 10 dilution of each sample. Remove <strong>DNA Standard #1
+and #2</strong> from the freezer and allow them to reach room temperature
+before beginning.</p>
+<ol>
+<li><p>Add 1 µL of extracted DNA to 9 µL of <strong>Elution Buffer</strong> in a 1.5 ml</p>
+<blockquote>
+<div><p>LoBind tube to create the 1 in 10 dilution for each sample.</p>
+</div></blockquote>
+</li>
+<li><p>Put 5 µL of the 1 in 10 dilution into a PCR strip tube.</p></li>
+<li><p>Put 5 µL of extracted DNA into a PCR strip tube.</p></li>
+<li><p>Calculate the amount of <strong>Qubit buffer</strong> required using this</p>
+<blockquote>
+<div><p>equation, where n is equal to the number of [samples]{.underline}
+you have:</p>
+</div></blockquote>
+</li>
+</ol>
+<p>+———————————————————————–+
+| Qubit buffer required (µL) = 199 x ((n x 2) + 3)                      |
+|                                                                       |
+| Example for 4 samples:                                                |
+|                                                                       |
+| (n = 4)                                                               |
+|                                                                       |
+| 199 x ((4 x 2) + 3) = 199 x 11 = 2189 µL of Qubit buffer              |
++=======================================================================+
++———————————————————————–+</p>
+<ol>
+<li><p>Calculate the amount of <strong>Qubit dye</strong> required using this equation,</p>
+<blockquote>
+<div><p>where n is equal to the number of [samples]{.underline} you have:</p>
+</div></blockquote>
+</li>
+</ol>
+<p>+———————————————————————–+
+| Qubit dye required (µL) = 1 x ((n x 2) + 3)                           |
+|                                                                       |
+| Example for 4 samples:                                                |
+|                                                                       |
+| (n = 4)                                                               |
+|                                                                       |
+| 1 x ((4 x 2) + 3) = 1 x 11 = 11 µL of Qubit dye                       |
++=======================================================================+
++———————————————————————–+</p>
+<ol>
+<li><p>Prepare the <strong>Qubit Working Solution</strong> by adding the required</p>
+<blockquote>
+<div><p>amounts of <strong>Qubit buffer and dye</strong> to a 10mL tube, then vortex
+briefly</p>
+</div></blockquote>
+</li>
+<li><p>Vortex both DNA standards very thoroughly.</p></li>
+<li><p>Add 190 µL of the <strong>Working Solution</strong> and 10 µL of <strong>Standard #1</strong></p>
+<blockquote>
+<div><p>to a Qubit tube, then vortex briefly</p>
+</div></blockquote>
+</li>
+<li><p>Add 190 µL of the <strong>Working Solution</strong> and 10 µL of <strong>Standard #2</strong></p>
+<blockquote>
+<div><p>to a Qubit tube, then vortex briefly</p>
+</div></blockquote>
+</li>
+<li><p>For each sample, add 198 µL of <strong>Working Solution</strong> and 2 µL of</p>
+<blockquote>
+<div><p>extracted DNA to a Qubit tube, then vortex briefly</p>
+</div></blockquote>
+</li>
+<li><p>For each dilution, add 198 µL of <strong>Working Solution</strong> and 2 µL of</p>
+<blockquote>
+<div><p>extracted DNA dilution (1 in 10) to a Qubit tube, then vortex
+briefly</p>
+</div></blockquote>
+</li>
+<li><p>Ask a demonstrator to show you the qubit machine and quantify the</p>
+<blockquote>
+<div><p>DNA in each Qubit tube, recording results as they appear on the
+screen.</p>
+</div></blockquote>
+</li>
+<li><p>Repeat quantification in the Qubit machine for all samples and</p>
+<blockquote>
+<div><p>dilutions (not the DNA standards) a further 2 times, recording
+results as they appear on the screen.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>+———————————————————————–+
+| &gt; It is recommended that you make a table for your group’s Qubit      |
+| &gt; results with 2 columns, one for the tube name and one for the       |
+| &gt; quantification result.                                              |
++=======================================================================+
++———————————————————————–+</p>
+</section>
+<section id="nanodrop-quality-assessment">
+<h3>Nanodrop Quality Assessment<a class="headerlink" href="#nanodrop-quality-assessment" title="Permalink to this headline">#</a></h3>
+<p>A demonstrator will set up the Nanodrop software and blank the machine
+for your group, then, after you measure your samples, your results will
+be sent to you.</p>
+<ol>
+<li><p>As shown by the demonstrator, use a KIMTECH wipe to wipe the sensor</p>
+<blockquote>
+<div><p>and sampling arm.</p>
+</div></blockquote>
+</li>
+<li><p>Gently place 2 µL of your extracted DNA onto the sensor (as shown</p>
+<blockquote>
+<div><p>below and by the demonstrator).</p>
+</div></blockquote>
+</li>
+<li><p>Lower the sampling arm and the demonstrator will run the analysis.</p></li>
+<li><p>Repeat this process with your 1 in 10 dilution.</p></li>
+</ol>
+<p><img alt="" src="weekA/media/image4.png" />{width=”5.134897200349957in”
+height=”1.797214566929134in”}</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./weekA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dave Lunt et al<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

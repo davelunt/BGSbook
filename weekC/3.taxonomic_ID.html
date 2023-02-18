@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Taxonomic ID &#8212; BGS course book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assembling the genome and QC" href="4.assembly.html" />
+    <link rel="prev" title="Analysis and Quality Control of Sequence Data" href="2.sequence_QC.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/BGSlogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BGS course book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Bacterial Genome Sequencing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/index.html">
+   BGS course manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/facilities.html">
+   Facilities and Equipment for the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/assessments.html">
+   Assessments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week A microbiology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekA/microbiology.html">
+   Week A Microbiology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week B sequencing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/weekB_manual.html">
+   Week B manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/ONT_library_prep.html">
+   ONT ligation library preparation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week C assembly
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="weekC_manual.html">
+   Week C manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.Intro_unix_command_line.html">
+   Introduction to the unix command line
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.sequence_QC.html">
+   sequence_QC.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   taxonomic_ID.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.assembly.html">
+   assembly.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week D annotation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/weekD_manual.html">
+   Week D manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekD/5.AMR_detection.html">
+   AMR_detection.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week E antibiotics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekE/antibiotics.html">
+   Week E: Student-led experiments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Completing the course
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../completion.html">
+   final tasks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FweekC/3.taxonomic_ID.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/weekC/3.taxonomic_ID.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kraken2-kmer-analysis">
+   1.1 Kraken2 kmer analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-a-kraken2-analysis">
+   1.2 Running a Kraken2 analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#displaying-the-results">
+   1.3 Displaying the results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Taxonomic ID</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kraken2-kmer-analysis">
+   1.1 Kraken2 kmer analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-a-kraken2-analysis">
+   1.2 Running a Kraken2 analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#displaying-the-results">
+   1.3 Displaying the results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="taxonomic-id">
+<h1>Taxonomic ID<a class="headerlink" href="#taxonomic-id" title="Permalink to this headline">#</a></h1>
+<p>We intended to sequence an E. coli strain provided to us. This turned into 2 strains each with a unique morphology on plates. But how do we know that this is E. coli at all? Hadn’t we better check?</p>
+<p>Conducting a taxonomic analysis of our sequence data is good standard practice in all areas of genomics. This is not just because we may have got a mis-identified sample, it also checks for contamination. This could be contamination by other bacteria but it also checks that our sequence reads aren’t human, from lab contamination when preparing the DNA.</p>
+<section id="kraken2-kmer-analysis">
+<h2>1.1 Kraken2 kmer analysis<a class="headerlink" href="#kraken2-kmer-analysis" title="Permalink to this headline">#</a></h2>
+<p><img alt="image" src="../_images/kraken2.png" /></p>
+<p><a class="reference external" href="https://ccb.jhu.edu/software/kraken2/">Kraken2</a> is software for rapid taxonomic analysis of DNA sequence data.</p>
+<p>Wood DE, Lu J, Langmead B. Improved metagenomic analysis with Kraken 2. Genome Biol. 2019;20: 257. doi:<a class="reference external" href="https:///dx.doi.org/10.1186/s13059-019-1891-0">10.1186/s13059-019-1891-0</a></p>
+<p>Kraken2 will require access to:</p>
+<ol class="simple">
+<li><p>a database of bacterial genomes</p></li>
+<li><p>a taxonomy</p></li>
+<li><p>your sequence reads</p></li>
+</ol>
+<p>We provide a database of bacterial genomes <code class="docutils literal notranslate"><span class="pre">data/bact_db</span></code></p>
+<p>The taxonomy is a way to work out what species are represented by the database sequences matching your genome sequence reads. This taxonomy is within the <code class="docutils literal notranslate"><span class="pre">bact_db</span></code> database.</p>
+<p>The sequence reads you are interested in are the <code class="docutils literal notranslate"><span class="pre">*.fastq.gz</span></code> files that have made it through QC. Unfortunately this is a big data set of about 4GB. For these reasons we are going to use a subset of 2000 sequences from the data with the fairly reasonable assumption that will be a representative sample of the whole. The sequence file to match against the database of genomes is called <code class="docutils literal notranslate"><span class="pre">ONT/strainb/btest2k.fastq.gz</span></code></p>
+</section>
+<section id="running-a-kraken2-analysis">
+<h2>1.2 Running a Kraken2 analysis<a class="headerlink" href="#running-a-kraken2-analysis" title="Permalink to this headline">#</a></h2>
+<p>In typical unix style the command to match sequence data against the database is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">kraken2</span> <span class="pre">--db</span> <span class="pre">DATABASENAME</span> <span class="pre">SEQFILENAME</span> <span class="pre">--gzip-compressed</span> <span class="pre">--output</span> <span class="pre">OUTFILENAME</span> <span class="pre">--report</span> <span class="pre">REPORTNAME</span></code></p>
+<ol class="simple">
+<li><p>You will need to provide the name of the directory containng the database and taxonomy instead of <code class="docutils literal notranslate"><span class="pre">DATABASENAME</span></code>, make sure you have the correct path to this, you can check using your command line skills.</p></li>
+<li><p>We have provided a 2000 sequence fastq file (ie <code class="docutils literal notranslate"><span class="pre">SEQFILENAME</span></code>) in <code class="docutils literal notranslate"><span class="pre">ONT/strainb/filename.fastq.gz</span></code>.</p></li>
+<li><p>The flag <code class="docutils literal notranslate"><span class="pre">--gzip-compressed</span></code> tells Kraken2 that the input file has been compressed.</p></li>
+<li><p>The flag <code class="docutils literal notranslate"><span class="pre">--report</span></code> determines where the human readable report is written, please giove this a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">--output</span></code> is a tab separated data file with information on each read. Please give this a <code class="docutils literal notranslate"><span class="pre">.krk</span></code> extension</p></li>
+<li><p>Please check for tyops</p></li>
+</ol>
+<p>Once you have constucted your Kraken2 analysis command, try it and see in the cell below</p>
+<p>A very good simple file to explore is <code class="docutils literal notranslate"><span class="pre">/kraken/REPORTNAME.txt</span></code>, have a look at this now.</p>
+<p>The columns are</p>
+<ul class="simple">
+<li><p>line number</p></li>
+<li><p>percentage of reads</p></li>
+<li><p>total reads</p></li>
+<li><p>reads assigned to that taxonomic level</p></li>
+<li><p>letter representing taxonomic level (eg G = genus)</p></li>
+<li><p>taxonomic ID number</p></li>
+<li><p>taxonomic name</p></li>
+</ul>
+</section>
+<section id="displaying-the-results">
+<h2>1.3 Displaying the results<a class="headerlink" href="#displaying-the-results" title="Permalink to this headline">#</a></h2>
+<p><img alt="image" src="../_images/recentrifuge.png" /></p>
+<p>We are going to display the results graphically using the <a class="reference external" href="https://github.com/khyox/recentrifuge">Recentrifuge software</a>. This produces interactive concentric pie charts to represent the quantity and hierarchical taxonomic classification of reads.</p>
+<p>If you wish to see the sort of interactive diagrams produced by Recentrifuge here is an <a class="reference external" href="https://rawgit.com/khyox/rcf-aux/master/TEST.rcf.html?dataset=5&amp;node=0&amp;collapse=false&amp;color=true&amp;depth=30&amp;font=12&amp;key=true">example report</a>.</p>
+<p>Martí JM. Recentrifuge: Robust comparative analysis and contamination removal for metagenomics. PLoS Comput Biol. 2019;15: e1006967. doi:<a class="reference external" href="https://dx.doi.org/10.1371/journal.pcbi.1006967">10.1371/journal.pcbi.1006967</a></p>
+<p>The Recentrifuge command is simple</p>
+<p><code class="docutils literal notranslate"><span class="pre">rcf</span> <span class="pre">-k</span> <span class="pre">OUTFILENAME.krk</span></code></p>
+<p>but unfortunately big data is very big and the taxonomic database for this analysis is much too large for the server we are operating on. We have carried out this analysis for you and the html file can be found in <code class="docutils literal notranslate"><span class="pre">ONT/strainb/recentrifuge/strainbkraken.krk.rcf.html</span></code></p>
+<p>This is just an html file that will open in a web browser. Explore this file. Ask specific questions. Discuss amongst yourselves and check with one of us</p>
+<p>You should now have evidence for the taxonomic ID of all your sequence reads and be able to describe the likely source of our DNA to species, and describe the level of contamination in our DNA sequence, including human contamination.</p>
+<p><strong>Are you going to use a static version of this figure in your manuscript? What do you want it to show? Have you got the settings right, and exported a copy?</strong></p>
+<p><strong>Write a paragraph describing this and pass to other students for feedback. Re-write your paragrpah and get feedback from a demonstrator</strong></p>
+<section id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>What percentage of reads are ‘unknown’ (kraken report file) and what does this mean?</p></li>
+<li><p>what percentage of reads are E. coli?</p></li>
+<li><p>What percentage of reads are other bacteria (not E. coli) and what are the possible explanations for this?</p></li>
+</ol>
+<p>Discuss these questions among yourselves, and make notes in your lab books.</p>
+<HR>
+CHECK WITH US BEFORE PROGRESSING
+<HR></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./weekC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="2.sequence_QC.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Analysis and Quality Control of Sequence Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4.assembly.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assembling the genome and QC</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dave Lunt et al<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

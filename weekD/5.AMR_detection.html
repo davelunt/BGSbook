@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Genome annotation and AMR detection &#8212; BGS course book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week E: Student-led experiments" href="../weekE/antibiotics.html" />
+    <link rel="prev" title="Week D manual" href="weekD_manual.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/BGSlogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BGS course book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Bacterial Genome Sequencing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/index.html">
+   BGS course manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/facilities.html">
+   Facilities and Equipment for the Course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/assessments.html">
+   Assessments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week A microbiology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekA/microbiology.html">
+   Week A Microbiology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week B sequencing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekB/weekB_manual.html">
+   Week B manual
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week C assembly
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/weekC_manual.html">
+   Week C manual
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/1.Intro_unix_command_line.html">
+   Introduction to the unix command line
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/2.sequence_QC.html">
+   sequence_QC.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/3.taxonomic_ID.html">
+   taxonomic_ID.ipynb
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekC/4.assembly.html">
+   assembly.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week D annotation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="weekD_manual.html">
+   Week D manual
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   AMR_detection.ipynb
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week E antibiotics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weekE/antibiotics.html">
+   Week E: Student-led experiments
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FweekD/5.AMR_detection.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/weekD/5.AMR_detection.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genome-annotation">
+   1. Genome annotation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-how-to-annotate-a-genome-sequence">
+     Discussion: how to annotate a genome sequence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-prepare-the-genome-file">
+     (optional) Prepare the genome file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bakta">
+     1.1 BAKTA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dfast">
+     1.2 DFAST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genome-annotation-outputs">
+     1.3 Genome annotation outputs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-1-week-d">
+   Competency 1 week D
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#amr-analysis">
+   2. AMR analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abritamr-optional-we-probably-won-t-use-this-today">
+     2.1 abritAMR (optional, we probably won’t use this today)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#card-rgi">
+     2.2 CARD-RGI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-2-week-d">
+   Competency 2 Week D
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Genome annotation and AMR detection</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#genome-annotation">
+   1. Genome annotation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-how-to-annotate-a-genome-sequence">
+     Discussion: how to annotate a genome sequence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optional-prepare-the-genome-file">
+     (optional) Prepare the genome file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bakta">
+     1.1 BAKTA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dfast">
+     1.2 DFAST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#genome-annotation-outputs">
+     1.3 Genome annotation outputs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-1-week-d">
+   Competency 1 week D
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#amr-analysis">
+   2. AMR analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abritamr-optional-we-probably-won-t-use-this-today">
+     2.1 abritAMR (optional, we probably won’t use this today)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#card-rgi">
+     2.2 CARD-RGI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#competency-2-week-d">
+   Competency 2 Week D
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="genome-annotation-and-amr-detection">
+<h1>Genome annotation and AMR detection<a class="headerlink" href="#genome-annotation-and-amr-detection" title="Permalink to this headline">#</a></h1>
+<p>You now have an assembled E.coli genome and are in a position to use bioinformatics analyses to determine the catalog of genes present in the genome and predict antimicrobial resitance (AMR) genes. Understanding AMR is a key challenge in public health and sequencing may be a useful tool.</p>
+<p>At this stage in your research project you are going to approach this work semi-independently. This workbook will guide you but you will need to read the associated papers, and the program’s help documentation for each analysis.</p>
+<section id="genome-annotation">
+<h2>1. Genome annotation<a class="headerlink" href="#genome-annotation" title="Permalink to this headline">#</a></h2>
+<p>At the moment you have a fasta file which was the output of the genome assembly program Flye. This is the E. coli genome, and some other sequences. Make sure that you know which this file is, and have an analysis of what sequences are in this file, their lengths and any other information you have gathered.</p>
+<p>Genome annotation moves from a bare fasta seuqence to a set of rich information about the sequence.</p>
+<p><strong>Question: what information do you want to know about the sequence?</strong></p>
+<p>What information can be added to the bare <code class="docutils literal notranslate"><span class="pre">ACGT</span></code> to make it more biologically relevant, and to reveal useful information? This is a general question, not one requiring specialist genomics knowledge. Discuss among yourselves and make notes.</p>
+<p>REFERENCES</p>
+<ol class="simple">
+<li><p>Stein L. Genome annotation: from sequence to biology. Nat Rev Genet. 2001;2: 493–503. doi:10.1038/35080529</p></li>
+<li><p>Yandell M, Ence D. A beginner’s guide to eukaryotic genome annotation. Nat Rev Genet. 2012;13: 329–342. doi:10.1038/nrg3174</p></li>
+</ol>
+<p>The approaches to annotating eukaryotic genomes and prokaryotic genomes are quite different. Why might this be?</p>
+<p>You will see reference to many bacterial genome annotation software. Examples include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tseemann/prokka">Prokka</a></p></li>
+<li><p><a class="reference external" href="https://academic.oup.com/bioinformatics/article/34/6/1037/4587587">DFAST</a></p></li>
+<li><p><a class="reference external" href="https://github.com/hyattpd/prodigal/wiki">Prodigal</a></p></li>
+<li><p><a class="reference external" href="https://www.ncbi.nlm.nih.gov/genome/annotation_prok/">NCBI annotation pipeline</a></p></li>
+<li><p><a class="reference external" href="https://github.com/oschwengers/bakta">Bakta</a></p></li>
+<li><p><a class="reference external" href="https://github.com/cruizperez/MicrobeAnnotator">MicrobeAnnotator</a></p></li>
+</ul>
+<HR>
+<section id="discussion-how-to-annotate-a-genome-sequence">
+<h3>Discussion: how to annotate a genome sequence<a class="headerlink" href="#discussion-how-to-annotate-a-genome-sequence" title="Permalink to this headline">#</a></h3>
+<HR></section>
+<section id="optional-prepare-the-genome-file">
+<h3>(optional) Prepare the genome file<a class="headerlink" href="#optional-prepare-the-genome-file" title="Permalink to this headline">#</a></h3>
+<p>You have 5 sequences in genome assembly of strain B and 6 sequences in the genome assembly of strain C. Do you want to analyse these together or as separate sequences?</p>
+<p>There is not a ‘right’ answer here. Some programs will be happy with everything together, others less so. Some will be happy but the annotation results will refer to everything together and might be less easy to interpret. Others might make much more sense when they are describing all the sequences rather than one at a time. My point here is to make you think about what you are submittign and to critically assess the outputs in that light. If you don’t like it you can do it the other way.</p>
+<p>Many of you have already had a go at splitting fasta into individual sequences. There are many ways to do this, Google it. My personal favourite though is using the <code class="docutils literal notranslate"><span class="pre">seqkit</span> <span class="pre">split2</span></code> command, read the <a class="reference external" href="https://bioinf.shenwei.me/seqkit/usage/#split2">documentation</a> to find the right syntax.</p>
+</section>
+<section id="bakta">
+<h3>1.1 BAKTA<a class="headerlink" href="#bakta" title="Permalink to this headline">#</a></h3>
+<p>Bakta is a modern and powerful approach to bacterial genome annotation. Explore the Bakta annotation server, read the paper, github website and understand what it is doing and why.</p>
+<p>You can annotate your genome at the <a class="reference external" href="https://bakta.computational.bio/">Bakta server</a>. This might take an hour or more, you could however begin competency 1 (below).</p>
+</section>
+<section id="dfast">
+<h3>1.2 DFAST<a class="headerlink" href="#dfast" title="Permalink to this headline">#</a></h3>
+<p>Again, please learn about DFAST as an approach to genome annotation. The <a class="reference external" href="https://dfast.ddbj.nig.ac.jp/">DFAST Annotation Server</a> is available for your job submission</p>
+</section>
+<section id="genome-annotation-outputs">
+<h3>1.3 Genome annotation outputs<a class="headerlink" href="#genome-annotation-outputs" title="Permalink to this headline">#</a></h3>
+<p>Each server will provide you with output files. Take the time to retrieve information about these output file types and what information they contain.</p>
+<p>At the very least you should back up the output files for later use.</p>
+<p>One interesting thing you could do next is to load these files into a genome browser. A good one is <a class="reference external" href="https://igv.org/app/">IGV</a></p>
+<HR></section>
+</section>
+<section id="competency-1-week-d">
+<h2>Competency 1 week D<a class="headerlink" href="#competency-1-week-d" title="Permalink to this headline">#</a></h2>
+<p>Pick one genome annotation software package, it doesn’t have to be the one you have used, though there are advantages to this for writing your manuscript and understanding your data</p>
+<p><strong>Describe briefly how a named software attempts to annotate components of the bacterial genome.</strong></p>
+<p>“Briefly” means less than a page. Most people should choose to write <strong>about half a page</strong>, more is not better and this is not an essay but a brief explanation of an approach. If you absolutely need a diagram that is OK too.</p>
+<p>Do not talk about eukaryotic genome analysis. Do not talk about it being fast, low memory, or easy to install, this is not a review of the software. Instead describe the general approach by which it can annotate (write a biological description) of a section of the genome assembly fasta.</p>
+<HR>
+<p>BREAK HERE. Please wait before progressing</p>
+<HR></section>
+<section id="amr-analysis">
+<h2>2. AMR analysis<a class="headerlink" href="#amr-analysis" title="Permalink to this headline">#</a></h2>
+<p>We are going to analyse for anti-microbial resistance genes with 2 software workflows:</p>
+<ol class="simple">
+<li><p>abritAMR</p></li>
+<li><p>CARD</p></li>
+</ol>
+<section id="abritamr-optional-we-probably-won-t-use-this-today">
+<h3>2.1 abritAMR (optional, we probably won’t use this today)<a class="headerlink" href="#abritamr-optional-we-probably-won-t-use-this-today" title="Permalink to this headline">#</a></h3>
+<p>abritAMR is a bioinformatics workflow that uses several other tools to create an analysis and report on AMR genes. It is designed for use in healthcare situations.</p>
+<p>Sherry et al. An ISO-certified genomics workflow for identification and surveillance of antimicrobial resistance. Nat Commun. 2023;14: 60. doi:<a class="reference external" href="https://dx.doi.org/10.1038/s41467-022-35713-4">10.1038/s41467-022-35713-4</a></p>
+<p>The code and help documentation are available:</p>
+<p><a class="reference external" href="https://github.com/MDU-PHL/abritamr">https://github.com/MDU-PHL/abritamr</a></p>
+</section>
+<section id="card-rgi">
+<h3>2.2 CARD-RGI<a class="headerlink" href="#card-rgi" title="Permalink to this headline">#</a></h3>
+<p>The Comprehensive Antibiotic Resistance Database (CARD) is a bioinformatics database focussed on resistance genes.</p>
+<p>We are going to try to analyse our data using the <strong>Resistance Gene Identifier</strong> web server.</p>
+<p><a class="reference external" href="https://card.mcmaster.ca/analyze/rgi">https://card.mcmaster.ca/analyze/rgi</a></p>
+<p>There is a 20 Mb file size limit, how big are your assembly files? Are you going to analyse all 5-6 sequences together or separately?</p>
+<p>Do you understand the analyses carried out by RGI? Can you describe the approach that it takes? If not then searching and reading will be required.</p>
+<p>What output files have been produced and what do they contain?</p>
+<HR></section>
+</section>
+<section id="competency-2-week-d">
+<h2>Competency 2 Week D<a class="headerlink" href="#competency-2-week-d" title="Permalink to this headline">#</a></h2>
+<p><strong>Produce a simple table of AMR genes present in your strains</strong></p>
+<p>Although something similar may have been produced by your analyses you will need to simplify and explain it. Remove information not pertinent to your experiment, write a legend. Perhaps write 3-4 sentences on the methods for producing the table. It is an exercise to demonstrate your generation of results, but also to familiarise you with different types of AMR.</p>
+<HR><p>Have you done a literature search yet to find out about the action of antibiotics, and AMR genes held by bacteria to defeat them? This understanding will be a key aspect of interpreting your data and writing it up.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./weekD"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="weekD_manual.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Week D manual</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../weekE/antibiotics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week E: Student-led experiments</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dave Lunt et al<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
