@@ -1,6 +1,4 @@
-# BGS course manual
-
-## Understanding how to do well with the course
+# BGS course student manual
 
 Welcome to Bacterial Genome Sequencing course. Each lab week will have a separate lab manual with all the details and instructions you need. This is a guide to the BGS course structure, and a way in which we can highlight the important stuff,guiding you (we hope) to do well.
 
