@@ -8,10 +8,6 @@
 
 ![ligation sequencing protocol page 4](../images/ont-ligation-sequencing/04-ont-ligation-sequencing-kit-lsk-109-final-04.jpg)
 
-![ligation sequencing protocol page 4](../images/ont-ligation-sequencing/04-ont-ligation-sequencing-kit-lsk-109-final-05.jpg)
-
-![ligation sequencing protocol page 5](../images/ont-ligation-sequencing/05-ont-ligation-sequencing-kit-lsk-109-final-04.jpg)
-
 ![ligation sequencing protocol page 5](../images/ont-ligation-sequencing/05-ont-ligation-sequencing-kit-lsk-109-final-05.jpg)
 
 ![ligation sequencing protocol page 6](../images/ont-ligation-sequencing/06-ont-ligation-sequencing-kit-lsk-109-final-06.jpg)
