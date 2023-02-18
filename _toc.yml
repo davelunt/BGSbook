@@ -22,8 +22,7 @@ parts:
     maxdepth: 2
     chapters:
     - file: weekB/weekB_manual.md
-    - file: weekB/ONTlibrary.md
-      title: library prep protocol
+    - file: weekB/ONT_library_prep.md
 
   - caption:  Week C assembly
     maxdepth: 2
