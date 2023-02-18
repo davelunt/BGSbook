@@ -14,3 +14,4 @@ Students each have an account on the University server running Jupyter Lab. They
 
 Software is installed for students on the server via [conda](https://docs.conda.io/projects/conda/en/latest/index.html), and the repository contains an `environment.yaml` file specifying the install.
 
+It is important to note that the **Jupyter notebooks require a bash kernel** in order to run the bash commands. This may need to be installed.

@@ -1,5 +1,27 @@
 # Week E: Student-led experiments
 
-This week students can organise their own experiments to conclude the research project. Many students decide to return to the lab and test their predictions of antibiotic resistance by treating the bacteria with antibiotics.
+In week E students can organise their own experiments to conclude the research project. Many students decide to return to the lab and test their predictions of antibiotic resistance by treating the bacteria with antibiotics. Students are encouraged to work in small groups (2-4) rather than individually, and these are most likely the presentation groups from week D.
 
-In addition help with the manuscript plan, there will be time with students to translate their course into employability skills for a CV.
+## Experimental Plan
+
+Students must submit a written time plan with what they intend to do in each half day of week E (or a gantt chart). They must also prepare a detailed list of materials (media, antibiotics, equipment etc) 5 weeks before week E to ensure ordering and preparation can be completed. 
+
+This plan is discussed with staff to ensure feasibility. We encourage simple experiments that can be completed to a high standard over complex experiments that may not successful in the limited time available.
+
+## Manuscript Help
+
+In week E we start to coach students on the best way to write a scientific manuscript for their final assessment.
+
+## Employability Skills
+
+In week E, in addition to help with the manuscript plan, there will be time with students to translate their course experiences into named employability skills for a CV. These may include:
+
+- Microbiology techniques. Plating, culturing and gram staining bacteria from clinical isolates
+
+- Bacterial DNA extraction and quantification. Construction of DNA sequencing library, loading and running of an ONT minION nanopore DNA sequencer
+
+- Knowledge of the unix command line. Basic command line skills to navigate, inspect and manipulate large data sets. Use of the command line for bioinformatics
+
+- Genome assembly and quality control. Ability to detect contamination in sequence sets. Basic skills to assemble a bacterial genome from DNA sequence data, and assess the quality of the assembly
+
+- Genome annotation and AMR gene detection.  Basic skills to annotate a bacterial genome and to predict antimicrobial resistance genes

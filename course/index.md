@@ -95,11 +95,7 @@ scientists publishing their work.
 
 ### Labs
 
-You will spend **5 full weeks in labs** (we label these weeks A-E) with
-3 in semester 1 (ABC) and 2 (DE) in semester 2. You will be expected to
-attend every day during the set hours. If you do not attend fully you
-will be letting down the entire group, and will be asked to transfer to
-a different module.
+You will spend **5 full weeks in labs** (we label these weeks A-E). You will be expected to attend every day during the set hours. If you do not attend fully you will be letting down the entire group, and will be asked to transfer to a different module.
 
 We do of course recognise that there will be times when you can't attend
 for genuine reasons, and as long as we are made aware then we can come

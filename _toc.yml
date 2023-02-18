@@ -22,19 +22,37 @@ parts:
     maxdepth: 2
     chapters:
     - file: weekB/weekB_manual.md
+    - file: weekB/ONTlibrary.md
+      title: library prep protocol
 
   - caption:  Week C assembly
     maxdepth: 2
     chapters:
     - file: weekC/weekC_manual.md
+    - file: weekC/1.Intro_unix_command_line.ipynb
+      title: intro_unix_command_line.ipynb
+    - file: weekC/2.sequence_QC.ipynb
+      title: sequence_QC.ipynb
+    - file: weekC/3.taxonomic_ID.ipynb
+      title: taxonomic_ID.ipynb
+    - file: weekC/4.assembly.ipynb
+      title: assembly.ipynb
 
   - caption:  Week D annotation
     maxdepth: 2
     chapters:
     - file: weekD/weekD_manual.md
+    - file: weekD/5.AMR_detection.ipynb
+      title: AMR_detection.ipynb
     
   - caption:  Week E antibiotics
     maxdepth: 2
     chapters:
     - file: weekE/antibiotics.md
+  
+  - caption:  Completing the course
+    maxdepth: 2
+    chapters:
+    - file: completion.md
+      title: final tasks
   

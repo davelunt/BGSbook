@@ -3,12 +3,12 @@
 
 title: BGS course book
 author: Dave Lunt et al
-logo: images/fibrobacter.png
+logo: images/BGSlogo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: 'off'
 
 # Define the name of the latex output file for PDF builds
 latex:

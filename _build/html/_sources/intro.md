@@ -14,7 +14,7 @@ We made this freely available resource primarily for **instructors** trying to d
 
 ## Overview of the course
 
-This runs as a 5-week course for final year UK Biology undergraduate students. Our students have already studied some microbiology, and some genetics, but have no knowledge of bioinformatics. The students attend wet lab for 2 full weeks, then computer lab for 2 full weeks, then in the final week a mixture of both. We spread these 5 weeks through 2 semesters of study to allow it to be timetabled alongside other courses.
+This runs as a 5-week course for final year UK Biology undergraduate students. Our students have already studied some microbiology, and some genetics, but have no knowledge of bioinformatics. The students attend wet lab for 2 full weeks, then computer lab for 2 full weeks, then in the final week carry out their own (mostly wet lab) experiments. We spread these 5 weeks through 2 semesters of study to allow it to be timetabled alongside other courses.
 
 ### Week A: Study the bacterial strains
 
