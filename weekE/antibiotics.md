@@ -4,7 +4,9 @@ In week E students can organise their own experiments to conclude the research p
 
 ## Experimental Plan
 
-Students must submit a written time plan with what they intend to do in each half day of week E (or a gantt chart). They must also prepare a detailed list of materials (media, antibiotics, equipment etc) 5 weeks before week E to ensure ordering and preparation can be completed. 
+Students must submit a written time plan with what they intend to do in each half day of week E (or a gantt chart). They must also prepare a detailed list of materials (media, antibiotics, equipment etc) 5 weeks before week E to ensure ordering and preparation can be completed.
+
+The experiment frequently consists of students making plates with Mueller Hinton broth, starting a liquid culture of the test strains, spreading plates with test strains, placing commercial antibiotic test disks onto the spread plate, measuring the zone of growth inhibition around the disk.
 
 This plan is discussed with staff to ensure feasibility. We encourage simple experiments that can be completed to a high standard over complex experiments that may not successful in the limited time available.
 
@@ -16,7 +18,7 @@ In week E we start to coach students on the best way to write a scientific manus
 
 In week E, in addition to help with the manuscript plan, there will be time with students to translate their course experiences into named employability skills for a CV. These may include:
 
-- Microbiology techniques. Plating, culturing and gram staining bacteria from clinical isolates
+- Microbiology techniques. Plating, culturing and gram staining bacteria from clinical isolates, antibiotic resistance tests
 
 - Bacterial DNA extraction and quantification. Construction of DNA sequencing library, loading and running of an ONT minION nanopore DNA sequencer
 
