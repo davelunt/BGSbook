@@ -28,7 +28,9 @@ This week you will begin your Google Docs electronic lab notebook. You will fami
 
 ### Competency Portfolio
 
-This week you will have two competencies to document. These are described in more detail in the manual.
+This week you will have two competencies to document.
 
 - Bacterial Identification Figure 
 - DNA Extraction (quantity/quality/length) Figures
+
+ These are described in more detail in the manual.
