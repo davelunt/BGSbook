@@ -10,6 +10,8 @@ The experiment frequently consists of students making plates with Mueller Hinton
 
 This plan is discussed with staff to ensure feasibility. We encourage simple experiments that can be completed to a high standard over complex experiments that may not successful in the limited time available.
 
+There is a page of more student-facing instructions in [experimental_plan.md](experimental_plan.md)
+
 ## Manuscript Help
 
 In week E we start to coach students on the best way to write a scientific manuscript for their final assessment.
